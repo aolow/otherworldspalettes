@@ -1,9 +1,9 @@
 # otherworldspalettes
 
-`otherworldspalettes` provides vivid qualitative colour palettes derived from
-the *Other Worlds* art project. Colours are deliberately ordered so neighbouring
-series jump across hue and lightness instead of forming clusters of similar
-shades.
+`otherworldspalettes` provides qualitative and continuous colour palettes
+derived from the *Other Worlds* art project. Discrete colours are deliberately
+ordered so neighbouring series jump across hue and lightness; continuous maps
+move smoothly through deep-space shadows into luminous atmospheric colour.
 
 ## Palettes
 
@@ -50,3 +50,27 @@ The palettes are intended for qualitative data. For accessibility, do not rely
 on colour alone when many groups are present: add direct labels, shapes, line
 types, or facets. The 8-colour `nebula` palette is the preferred default for
 figures that must remain easy to distinguish in print.
+
+## Continuous palettes
+
+![Six continuous Other Worlds palettes](man/figures/continuous-palettes.png)
+
+The package also includes six continuous, dark-to-light palettes. The first
+four explore a focused hue family; the final two move across hues in the spirit
+of perceptually smooth scientific colour maps.
+
+- `emerald_void` — mineral greens and luminous emerald.
+- `blue_hour` — midnight indigo through atmospheric cyan.
+- `red_giant` — oxblood, nebula red, and warm stellar light.
+- `magenta_orbit` — deep violet through ion pink.
+- `tidal_emerald` — blue-black through tidal blue and emerald to alien light.
+- `supernova` — plum and magenta through red, solar gold, and a pale star core.
+
+```r
+otherworlds_continuous_palettes()
+cols <- otherworlds_continuous_palette(100, "tidal_emerald")
+
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_raster() +
+  scale_fill_otherworlds_c(palette = "supernova")
+```

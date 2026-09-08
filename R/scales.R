@@ -44,3 +44,46 @@ scale_fill_otherworlds <- function(..., palette = "cosmic", direction = 1,
   scale_colour_otherworlds(..., palette = palette, direction = direction,
                            aesthetics = aesthetics)
 }
+
+#' Other Worlds continuous colour scales
+#'
+#' Apply a deep-space-inspired continuous palette to a 'ggplot2' scale.
+#'
+#' @param ... Arguments passed to [ggplot2::continuous_scale()].
+#' @param palette Name of a continuous Other Worlds palette. See
+#'   [otherworlds_continuous_palettes()].
+#' @param direction Use `1` for dark-to-light or `-1` to reverse the palette.
+#' @param aesthetics Character vector of aesthetics to scale.
+#'
+#' @return A 'ggplot2' scale object.
+#' @export
+scale_colour_otherworlds_c <- function(..., palette = "tidal_emerald",
+                                       direction = 1,
+                                       aesthetics = "colour") {
+  if (!requireNamespace("ggplot2", quietly = TRUE)) {
+    stop("Package 'ggplot2' is required for this scale.", call. = FALSE)
+  }
+  palette_function <- function(x) {
+    ramp <- grDevices::colorRamp(
+      otherworlds_continuous_palette(256, palette, direction), space = "Lab"
+    )
+    colours <- rep(NA_character_, length(x))
+    keep <- !is.na(x)
+    colours[keep] <- grDevices::rgb(ramp(x[keep]), maxColorValue = 255)
+    colours
+  }
+  ggplot2::continuous_scale(aesthetics, name = palette,
+                            palette = palette_function, ...)
+}
+
+#' @rdname scale_colour_otherworlds_c
+#' @export
+scale_color_otherworlds_c <- scale_colour_otherworlds_c
+
+#' @rdname scale_colour_otherworlds_c
+#' @export
+scale_fill_otherworlds_c <- function(..., palette = "tidal_emerald",
+                                     direction = 1, aesthetics = "fill") {
+  scale_colour_otherworlds_c(..., palette = palette, direction = direction,
+                             aesthetics = aesthetics)
+}
