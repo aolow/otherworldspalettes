@@ -1,0 +1,16 @@
+Package: otherworldspalettes
+Title: Art-Inspired Palettes for Scientific Graphics
+Version: 0.1.0
+Authors@R: person("Ola", role = c("aut", "cre"),
+    email = "ola@example.com")
+Description: Provides high-contrast qualitative colour palettes derived from
+    the 'Other Worlds' art project. The palettes are ordered to reduce visual
+    similarity between neighbouring colours and include optional discrete
+    colour and fill scales for 'ggplot2'.
+License: MIT + file LICENSE
+URL: https://github.com/aolow/otherworldspalettes
+BugReports: https://github.com/aolow/otherworldspalettes/issues
+Encoding: UTF-8
+RoxygenNote: 7.3.2
+Suggests:
+    ggplot2 (>= 3.4.0)

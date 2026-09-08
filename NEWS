@@ -1,0 +1,4 @@
+# otherworldspalettes 0.1.0
+
+* Initial release with 8-, 12-, and 20-colour qualitative palettes.
+* Added base R palette accessors and optional discrete `ggplot2` scales.

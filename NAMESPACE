@@ -1,0 +1,5 @@
+export(otherworlds_palette)
+export(otherworlds_palettes)
+export(scale_color_otherworlds)
+export(scale_colour_otherworlds)
+export(scale_fill_otherworlds)
