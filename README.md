@@ -53,7 +53,7 @@ figures that must remain easy to distinguish in print.
 
 ## Continuous palettes
 
-![Six continuous Other Worlds palettes](man/figures/continuous-palettes.png)
+![Nine continuous Other Worlds palettes](man/figures/continuous-palettes.png)
 
 The package also includes six continuous, dark-to-light palettes. The first
 four explore a focused hue family; the final two move across hues in the spirit
@@ -66,6 +66,16 @@ of perceptually smooth scientific colour maps.
 - `tidal_emerald` — blue-black through tidal blue and emerald to alien light.
 - `supernova` — plum and magenta through red, solar gold, and a pale star core.
 
+Three additional palettes are designed for heatmaps and centered data. Each
+passes through a bright middle colour drawn from the paintings rather than a
+generic white midpoint.
+
+![Three painting-derived heatmap palettes](man/figures/three-colour-heatmaps.png)
+
+- `solar_tide` — deep blue through sun yellow to nebula red.
+- `alien_bloom` — emerald through warm cream to orbit magenta.
+- `cosmic_shore` — royal purple through atmospheric cyan to vermilion.
+
 ```r
 otherworlds_continuous_palettes()
 cols <- otherworlds_continuous_palette(100, "tidal_emerald")
@@ -73,4 +83,7 @@ cols <- otherworlds_continuous_palette(100, "tidal_emerald")
 ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_raster() +
   scale_fill_otherworlds_c(palette = "supernova")
+
+# Three-colour heatmap
+heatmap(volcano, col = otherworlds_continuous_palette(101, "solar_tide"))
 ```

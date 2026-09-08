@@ -25,7 +25,26 @@ stopifnot(
   identical(
     otherworlds_continuous_palettes(),
     c(emerald_void = 5L, blue_hour = 6L, red_giant = 6L,
-      magenta_orbit = 6L, tidal_emerald = 6L, supernova = 7L)
+      magenta_orbit = 6L, tidal_emerald = 6L, supernova = 7L,
+      solar_tide = 3L, alien_bloom = 3L, cosmic_shore = 3L)
+  )
+)
+
+anchors_are_preserved <- function(actual, expected) {
+  max(abs(grDevices::col2rgb(actual) - grDevices::col2rgb(expected))) <= 1L
+}
+stopifnot(
+  anchors_are_preserved(
+    otherworlds_continuous_palette(3, "solar_tide"),
+    c("#1859A9", "#F4C430", "#BE2E4A")
+  ),
+  anchors_are_preserved(
+    otherworlds_continuous_palette(3, "alien_bloom"),
+    c("#087F5B", "#F3D9A2", "#C13C91")
+  ),
+  anchors_are_preserved(
+    otherworlds_continuous_palette(3, "cosmic_shore"),
+    c("#51317A", "#9ED9E5", "#D94330")
   )
 )
 

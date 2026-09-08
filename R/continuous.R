@@ -46,6 +46,21 @@
     vermilion = "#EF7041",
     solar_gold = "#F6B45B",
     star_core = "#F4E6A2"
+  ),
+  solar_tide = c(
+    deep_blue = "#1859A9",
+    sun_yellow = "#F4C430",
+    nebula_red = "#BE2E4A"
+  ),
+  alien_bloom = c(
+    emerald = "#087F5B",
+    cream = "#F3D9A2",
+    orbit_magenta = "#C13C91"
+  ),
+  cosmic_shore = c(
+    royal_purple = "#51317A",
+    atmosphere = "#9ED9E5",
+    vermilion = "#D94330"
   )
 )
 
@@ -63,7 +78,7 @@ otherworlds_continuous_palettes <- function() {
 #' Retrieve a continuous Other Worlds colour palette
 #'
 #' Interpolates art-inspired colour anchors in CIE Lab space to create smooth
-#' sequential palettes for continuous data.
+#' sequential or three-colour diverging palettes for continuous data.
 #'
 #' @param n Number of colours to return.
 #' @param palette Name of a continuous Other Worlds palette. See
@@ -97,4 +112,3 @@ otherworlds_continuous_palette <- function(n = 256, palette = "tidal_emerald",
   }
   grDevices::colorRampPalette(anchors, space = "Lab")(as.integer(n))
 }
-

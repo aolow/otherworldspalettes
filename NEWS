@@ -4,3 +4,5 @@
 * Added base R palette accessors and optional discrete `ggplot2` scales.
 * Added six continuous deep-space palettes with Lab-space interpolation and
   optional continuous `ggplot2` colour and fill scales.
+* Added three painting-derived, three-colour heatmap palettes: `solar_tide`,
+  `alien_bloom`, and `cosmic_shore`.

@@ -13,7 +13,7 @@ otherworlds_continuous_palette(n = 256, palette = "tidal_emerald",
 }
 \value{A character vector of hexadecimal colours.}
 \description{Interpolates art-inspired anchors in CIE Lab space to create
-smooth sequential palettes for continuous data.}
+smooth sequential or three-colour diverging palettes for continuous data.}
 \examples{
 otherworlds_continuous_palette(8, "tidal_emerald")
 image(volcano, col = otherworlds_continuous_palette(100, "supernova"))
