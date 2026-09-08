@@ -25,7 +25,7 @@ stopifnot(
   identical(
     otherworlds_continuous_palettes(),
     c(emerald_void = 5L, blue_hour = 6L, red_giant = 6L,
-      magenta_orbit = 6L, tidal_emerald = 6L, supernova = 7L,
+      magenta_orbit = 6L, tidal_emerald = 6L, supernova = 6L,
       solar_tide = 3L, alien_bloom = 3L, cosmic_shore = 3L)
   )
 )

@@ -39,13 +39,12 @@
     alien_light = "#D5E887"
   ),
   supernova = c(
-    void_plum = "#190B2C",
-    royal_purple = "#5A176E",
-    orbit_magenta = "#A62072",
-    nebula_red = "#D63A55",
-    vermilion = "#EF7041",
-    solar_gold = "#F6B45B",
-    star_core = "#F4E6A2"
+    night_ink = "#0B102A",
+    shock_blue = "#29477F",
+    dusty_violet = "#7A477E",
+    nebula_coral = "#C75D67",
+    ejecta_gold = "#D5A85C",
+    ion_core = "#C9E8E2"
   ),
   solar_tide = c(
     deep_blue = "#1859A9",

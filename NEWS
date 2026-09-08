@@ -6,3 +6,5 @@
   optional continuous `ggplot2` colour and fill scales.
 * Added three painting-derived, three-colour heatmap palettes: `solar_tide`,
   `alien_bloom`, and `cosmic_shore`.
+* Redesigned `supernova` with a distinctive painterly arc through shock blue,
+  dusty violet, nebula coral, ejecta gold, and an icy ionized core.

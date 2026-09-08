@@ -64,7 +64,8 @@ of perceptually smooth scientific colour maps.
 - `red_giant` — oxblood, nebula red, and warm stellar light.
 - `magenta_orbit` — deep violet through ion pink.
 - `tidal_emerald` — blue-black through tidal blue and emerald to alien light.
-- `supernova` — plum and magenta through red, solar gold, and a pale star core.
+- `supernova` — shock blue through dusty violet, nebula coral, and ejecta gold
+  to an icy ionized core.
 
 Three additional palettes are designed for heatmaps and centered data. Each
 passes through a bright middle colour drawn from the paintings rather than a
