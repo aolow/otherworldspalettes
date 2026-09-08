@@ -13,4 +13,6 @@ BugReports: https://github.com/aolow/otherworldspalettes/issues
 Encoding: UTF-8
 RoxygenNote: 7.3.2
 Suggests:
-    ggplot2 (>= 3.4.0)
+    ggplot2 (>= 3.4.0),
+    knitr
+VignetteBuilder: knitr

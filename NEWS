@@ -8,3 +8,5 @@
   `alien_bloom`, and `cosmic_shore`.
 * Redesigned `supernova` with a distinctive painterly arc through shock blue,
   dusty violet, nebula coral, ejecta gold, and an icy ionized core.
+* Added `signal_fire`, `ultraviolet`, and `alien_heat` for high-contrast
+  heatmaps, plus a vignette comparing the heatmap palette families.

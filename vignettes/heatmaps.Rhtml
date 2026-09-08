@@ -1,0 +1,81 @@
+<!--
+%\VignetteIndexEntry{Heatmaps with Other Worlds palettes}
+%\VignetteEngine{knitr::knitr}
+%\VignetteEncoding{UTF-8}
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Heatmaps with Other Worlds palettes</title>
+  <style>
+    body { color: #25314f; font-family: system-ui, sans-serif; line-height: 1.55;
+      margin: 2rem auto; max-width: 920px; padding: 0 1rem; }
+    h1, h2 { color: #182541; }
+    code { background: #f2efe8; padding: .1rem .25rem; }
+    img { height: auto; max-width: 100%; }
+  </style>
+</head>
+<body>
+<h1>Heatmaps with Other Worlds palettes</h1>
+
+<p>Continuous colour maps can look convincing as narrow swatches while losing
+structure in small heatmap cells. This vignette tests the Other Worlds maps on
+the same centered dataset, where values below and above zero need visibly
+different treatment.</p>
+
+<!--begin.rcode setup, echo=FALSE, message=FALSE
+knitr::opts_chunk$set(fig.width = 9, fig.height = 3.3, dpi = 120)
+library(otherworldspalettes)
+z <- scale(volcano)
+limit <- max(abs(range(z)))
+breaks <- seq(-limit, limit, length.out = 202)
+end.rcode-->
+
+<h2>Painting-derived three-colour maps</h2>
+
+<p>These maps favor nuanced, atmospheric transitions. They work well for
+larger cells, smooth spatial fields, and figures where colour should sit
+quietly behind labels or contours.</p>
+
+<!--begin.rcode soft-heatmaps, echo=TRUE, fig.width=9, fig.height=3.3
+op <- par(mfrow = c(1, 3), mar = c(1, 1, 2.5, 1))
+for (nm in c("solar_tide", "alien_bloom", "cosmic_shore")) {
+  image(t(z[nrow(z):1, ]), axes = FALSE, useRaster = TRUE, breaks = breaks,
+        col = otherworlds_continuous_palette(201, nm))
+  title(nm)
+}
+par(op)
+end.rcode-->
+
+<h2>High-contrast maps</h2>
+
+<p>The high-contrast family uses near-black poles, luminous centers, and
+stronger chroma. Choose these for compact cells, screens, or heatmaps where
+subtle differences must remain visible at a glance.</p>
+
+<!--begin.rcode high-contrast-heatmaps, echo=TRUE, fig.width=9, fig.height=3.3
+op <- par(mfrow = c(1, 3), mar = c(1, 1, 2.5, 1))
+for (nm in c("signal_fire", "ultraviolet", "alien_heat")) {
+  image(t(z[nrow(z):1, ]), axes = FALSE, useRaster = TRUE, breaks = breaks,
+        col = otherworlds_continuous_palette(201, nm))
+  title(nm)
+}
+par(op)
+end.rcode-->
+
+<h2>Choosing a map</h2>
+
+<p>Use <code>solar_tide</code> when readers already understand a blue-to-red
+temperature metaphor. <code>alien_bloom</code> provides the gentlest
+painting-led alternative, while <code>cosmic_shore</code> keeps a cool cyan
+center. For maximum separation, <code>signal_fire</code> is the most
+conventional, <code>ultraviolet</code> is the most cosmic, and
+<code>alien_heat</code> has the strongest Other Worlds identity.</p>
+
+<p>For centered values, use symmetric limits or breaks as above so the
+luminous middle colour represents the numerical midpoint. Reverse any map
+with <code>direction = -1</code> when the semantic direction of the data calls
+for it.</p>
+</body>
+</html>

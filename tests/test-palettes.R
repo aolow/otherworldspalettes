@@ -26,9 +26,19 @@ stopifnot(
     otherworlds_continuous_palettes(),
     c(emerald_void = 5L, blue_hour = 6L, red_giant = 6L,
       magenta_orbit = 6L, tidal_emerald = 6L, supernova = 6L,
-      solar_tide = 3L, alien_bloom = 3L, cosmic_shore = 3L)
+      solar_tide = 3L, alien_bloom = 3L, cosmic_shore = 3L,
+      signal_fire = 5L, ultraviolet = 5L, alien_heat = 5L)
   )
 )
+
+for (nm in c("signal_fire", "ultraviolet", "alien_heat")) {
+  high_contrast <- otherworlds_continuous_palette(101, nm)
+  stopifnot(
+    length(unique(high_contrast)) > 95L,
+    max(grDevices::col2rgb(high_contrast)) >= 240L,
+    min(grDevices::col2rgb(high_contrast)) <= 10L
+  )
+}
 
 anchors_are_preserved <- function(actual, expected) {
   max(abs(grDevices::col2rgb(actual) - grDevices::col2rgb(expected))) <= 1L

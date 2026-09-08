@@ -77,6 +77,21 @@ generic white midpoint.
 - `alien_bloom` — emerald through warm cream to orbit magenta.
 - `cosmic_shore` — royal purple through atmospheric cyan to vermilion.
 
+For dense heatmaps, three higher-contrast options use darker poles, luminous
+centers, and more saturated transitions:
+
+- `signal_fire` — deep space and electric blue through solar yellow to flare
+  orange and dark red.
+- `ultraviolet` — violet-black and electric violet through ion cyan to hot
+  magenta and deep wine.
+- `alien_heat` — forest void and emerald through acid yellow to orbit magenta
+  and deep plum.
+
+![High-contrast heatmap palettes](man/figures/high-contrast-heatmaps.png)
+
+See `vignette("heatmaps", package = "otherworldspalettes")` for side-by-side
+examples and guidance on choosing a palette.
+
 ```r
 otherworlds_continuous_palettes()
 cols <- otherworlds_continuous_palette(100, "tidal_emerald")

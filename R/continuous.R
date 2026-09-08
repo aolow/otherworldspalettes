@@ -60,6 +60,27 @@
     royal_purple = "#51317A",
     atmosphere = "#9ED9E5",
     vermilion = "#D94330"
+  ),
+  signal_fire = c(
+    deep_space = "#07122E",
+    electric_blue = "#0066FF",
+    solar_yellow = "#FFF200",
+    flare_orange = "#FF3B00",
+    dark_red = "#7A001D"
+  ),
+  ultraviolet = c(
+    violet_black = "#12002E",
+    electric_violet = "#6A00FF",
+    ion_cyan = "#00E5FF",
+    hot_magenta = "#FF2E88",
+    deep_wine = "#4A001A"
+  ),
+  alien_heat = c(
+    forest_void = "#002C24",
+    emerald = "#00B86B",
+    acid_yellow = "#F7F000",
+    orbit_magenta = "#FF3D81",
+    deep_plum = "#360039"
   )
 )
 
