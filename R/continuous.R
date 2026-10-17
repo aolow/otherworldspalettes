@@ -78,7 +78,6 @@
   ion_balance = c(
     negative_far = "#203E65",
     negative_mid = "#5989B0",
-    neutral_low = "#CEDCE5",
     neutral = "#F2F2F0",
     positive_mid = "#E5A26B",
     positive_far = "#953F35"
