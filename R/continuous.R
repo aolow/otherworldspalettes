@@ -75,6 +75,28 @@
     hot_magenta = "#FF2E88",
     deep_wine = "#4A001A"
   ),
+  ion_balance = c(
+    negative_far = "#203E65",
+    negative_mid = "#5989B0",
+    neutral_low = "#CEDCE5",
+    neutral = "#F2F2F0",
+    positive_mid = "#E5A26B",
+    positive_far = "#953F35"
+  ),
+  stellar_balance = c(
+    negative_far = "#493570",
+    negative_mid = "#9385B3",
+    neutral = "#F2F2F0",
+    positive_mid = "#BB9C69",
+    positive_far = "#68452B"
+  ),
+  ember_balance = c(
+    negative_far = "#234D54",
+    negative_mid = "#6E9EA2",
+    neutral = "#F2F2F0",
+    positive_mid = "#CC8D8A",
+    positive_far = "#843A52"
+  ),
   alien_heat = c(
     forest_void = "#002C24",
     emerald = "#00B86B",
