@@ -2,7 +2,7 @@
 <style>body{background:#101827;color:#eef3f7;font:15px system-ui,sans-serif;max-width:1000px;margin:3rem auto;padding:0 1rem}a{color:#93d9f0}h1{margin-bottom:0}p{color:#b9c6d3}main{display:grid;gap:1rem}.card{border:1px solid #374357;background:#192437;border-radius:12px;padding:1rem}.bar{display:flex;height:62px;border-radius:8px;overflow:hidden;margin:.7rem 0}.swatch{flex:1;min-width:0}.hex{font-size:12px;color:#b9c6d3;overflow-wrap:anywhere}select{background:#26374d;color:white;padding:8px;border:1px solid #67798e;border-radius:6px}</style>
 </head><body><h1>Other Worlds palette explorer</h1>
 <p>Art-inspired colors for scientific figures. For quantitative data, compare against a validated scientific colormap and test the final rendering.</p>
-<label for="palette">Palette</label> <select id="palette"></select><main id="output"></main>
+<label for="palette">Palette</label> <select id="palette"></select> <label for="surface">Preview background</label> <select id="surface"><option value="#081126">Deep navy</option><option value="#101827">Charcoal</option><option value="#000000">Black</option><option value="#FFFFFF">White (comparison)</option></select><main id="output"></main>
 <script>
 const colors={
   "nebula": [
@@ -156,9 +156,12 @@ const colors={
     "#360039"
   ],
   "galaxy40": ["#009E91","#BE2E4A","#9ED9E5","#F4C430","#60758C","#F58231","#4E91D8","#7A8B22","#C13C91","#00A65A","#A68AD5","#A7C636","#1859A9","#8C5A3C","#8046B2","#F3D9A2","#25314F","#D5A267","#00B9D8","#D94330","#08523D","#FD89A2","#405000","#6F3B53","#8F1000","#5B7857","#B78576","#D414FE","#AF7993","#F966D4","#1B7675","#FF2078","#167706","#98AE88","#7F0A76","#4050FF","#AC6809","#5C4D74","#F8746A","#0000EF"],
-  "galaxy40_max": ["#8145AF","#3EC30A","#604000","#FF7070","#12B9F3","#147769","#AF1040","#FF70EF","#8F8457","#F69307","#04C1AB","#CF3B01","#A9748E","#097AF0","#1C7411","#683554","#D60797","#8383B2","#895E4B","#98AE88","#209CA8","#CF20FF","#205030","#43496C","#B07805","#990305","#F70664","#009F50","#EF8FAF","#B38AFD","#CF9F80","#005861","#BB9CC6","#084AFA","#EF7040","#B35D60","#638C04","#ACA754","#097296","#8C027C"]
+  "galaxy40_max": ["#8145AF","#3EC30A","#604000","#FF7070","#12B9F3","#147769","#AF1040","#FF70EF","#8F8457","#F69307","#04C1AB","#CF3B01","#A9748E","#097AF0","#1C7411","#683554","#D60797","#8383B2","#895E4B","#98AE88","#209CA8","#CF20FF","#205030","#43496C","#B07805","#990305","#F70664","#009F50","#EF8FAF","#B38AFD","#CF9F80","#005861","#BB9CC6","#084AFA","#EF7040","#B35D60","#638C04","#ACA754","#097296","#8C027C"],
+  "eclipse": ["#70D9EB","#FF9876","#88DCAC","#F1CB68","#C7A2F5","#F58FC2","#77A7FF","#C5D180"],
+  "afterglow": ["#70D9EB","#FF9876","#88DCAC","#F1CB68","#C7A2F5","#F58FC2","#77A7FF","#C5D180","#1FA414","#C87E00","#419C91","#93905A"],
+  "deepfield": ["#70D9EB","#FF9876","#88DCAC","#F1CB68","#C7A2F5","#F58FC2","#77A7FF","#C5D180","#1FA414","#C87E00","#419C91","#93905A","#F94F70","#DE54DC","#3899B7","#79EE61","#FECAA2","#B78263","#FC5234","#B19F00"]
 };
 const picker=document.getElementById("palette"),output=document.getElementById("output");
 Object.keys(colors).forEach(name=>{const o=document.createElement("option");o.value=name;o.textContent=name;picker.append(o)});
-function render(){const name=picker.value,arr=colors[name];output.replaceChildren();const card=document.createElement("section");card.className="card";const title=document.createElement("h2");title.textContent=name;card.append(title);const bar=document.createElement("div");bar.className="bar";arr.forEach(c=>{const sw=document.createElement("div");sw.className="swatch";sw.style.background=c;sw.title=c;bar.append(sw)});card.append(bar);const codes=document.createElement("p");codes.className="hex";codes.textContent=arr.join("  ·  ");card.append(codes);output.append(card)}picker.addEventListener("change",render);render();
+function render(){const name=picker.value,arr=colors[name];output.replaceChildren();const card=document.createElement("section");card.className="card";card.style.background=document.getElementById("surface").value;const title=document.createElement("h2");title.textContent=name;card.append(title);const bar=document.createElement("div");bar.className="bar";arr.forEach(c=>{const sw=document.createElement("div");sw.className="swatch";sw.style.background=c;sw.title=c;bar.append(sw)});card.append(bar);const codes=document.createElement("p");codes.className="hex";codes.textContent=arr.join("  ·  ");card.append(codes);output.append(card)}picker.addEventListener("change",render);document.getElementById("surface").addEventListener("change",render);render();
 </script></body></html>

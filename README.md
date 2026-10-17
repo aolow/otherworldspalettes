@@ -40,6 +40,51 @@ category or factor level order fixed in your plotting code. The package's
 accessors and ggplot2 scales default to `cosmic`; explicitly select
 `palette = "nebula"` for the recommended eight-color starting point.
 
+## Dark-background qualitative palettes
+
+![Eclipse, Afterglow, and Deepfield on navy](man/figures/dark-palettes.svg)
+
+The package also includes a second, nested categorical family designed
+specifically for deep navy, charcoal, or black presentation backgrounds:
+
+- `eclipse`: 8 soft luminous colors.
+- `afterglow`: the same 8 plus 4 more, 12 total.
+- `deepfield`: the same 12 plus 8 more, 20 total.
+
+The values and names from `eclipse` remain unchanged in `afterglow` and
+`deepfield`; keep factor levels fixed to retain category-color assignments.
+These are **not** re-colorings of `nebula`, `stellar`, or `cosmic`, and are
+not continuous heatmap palettes. The existing `galaxy40` variants are still
+intended primarily for comparison on light surfaces.
+
+```r
+library(ggplot2)
+ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = Species)) +
+  geom_point(size = 2.5) +
+  scale_colour_otherworlds(palette = "eclipse") +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(fill = "#081126", colour = NA),
+    panel.background = element_rect(fill = "#081126", colour = NA),
+    panel.grid = element_blank(),
+    text = element_text(colour = "#E8F0F5"),
+    axis.text = element_text(colour = "#C8D7E1"),
+    legend.background = element_rect(fill = "#081126", colour = NA),
+    legend.key = element_rect(fill = "#081126", colour = NA)
+  )
+```
+
+The 20 colors pass a **minimum 5.2:1 relative-luminance contrast screening**
+against `#081126`, `#101827`, and black for solid swatches. This does
+**not** establish categorical discriminability for all viewers, color-vision
+deficiencies, small marks, thin lines, transparent points, or slide
+projection. Test final figures on the actual background and use direct
+labels where possible.
+
+Explore examples in
+`vignette("space-figures", package = "otherworldspalettes")` and
+`vignette("dark-slides", package = "otherworldspalettes")`.
+
 ## Experimental 40-category palettes
 
 ![Galaxy 40 candidates side by side](man/figures/galaxy40-comparison.svg)
@@ -193,14 +238,20 @@ heatmap(volcano, col = otherworlds_continuous_palette(101, "solar_tide"))
 | Categorical, up to 8 groups | `nebula` | Also use shapes or labels |
 | Categorical, 9 to 12 | `stellar` | Check small marks carefully |
 | Categorical, 13 to 20 | `cosmic` | Prefer faceting when feasible |
+| Categorical on navy, up to 8 | `eclipse` | Luminous marks and direct labels |
+| Categorical on navy, 9 to 12 | `afterglow` | Preserves the first eight assignments |
+| Categorical on navy, 13 to 20 | `deepfield` | Preserves the first twelve assignments |
 | Ordered magnitude | `tidal_emerald`, `blue_hour` | Check lightness ordering |
 | Signed, centered values | `ion_balance`, `stellar_balance`, `ember_balance` | Fix symmetric scale limits |
 | Expressive/artistic heatmaps | `alien_heat`, `ultraviolet`, `solar_tide` | Highly saturated centers can exaggerate zero |
 
 For a local interactive swatch explorer, open
 [`inst/explorer/index.html`](inst/explorer/index.html) in a browser.
-To see realistic scientific plots, see
-`vignette("scientific-figures", package = "otherworldspalettes")`.
+Select a background (navy, charcoal, black, or white) for comparison.
+To see illustrative scientific plots, see
+`vignette("scientific-figures", package = "otherworldspalettes")`,
+`vignette("space-figures", package = "otherworldspalettes")`, and
+`vignette("dark-slides", package = "otherworldspalettes")`.
 To run checks, use `R CMD check .` or the GitHub Actions workflow.
 
 ### Signed heatmap example

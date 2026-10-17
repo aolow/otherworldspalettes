@@ -1,5 +1,10 @@
 # Development (unreleased)
 
+* Added nested dark-background qualitative palettes: `eclipse` (8),
+  `afterglow` (12), and `deepfield` (20), plus contrast regression tests.
+* Added reproducible illustrative astronomy and dark-slide vignettes,
+  a dark-surface swatch comparison, and background-switching explorer.
+
 * Added experimental 40-category `galaxy40` (preserves Cosmic 20)
   and `galaxy40_max` (jointly optimized).
 * Added side-by-side visual comparison, provenance, and tests of

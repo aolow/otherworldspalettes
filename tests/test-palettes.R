@@ -4,7 +4,8 @@ stopifnot(
   identical(
     otherworlds_palettes(),
     c(nebula = 8L, stellar = 12L, cosmic = 20L,
-      galaxy40 = 40L, galaxy40_max = 40L)
+      galaxy40 = 40L, galaxy40_max = 40L,
+      eclipse = 8L, afterglow = 12L, deepfield = 20L)
   )
 )
 
