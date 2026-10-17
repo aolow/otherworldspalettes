@@ -128,6 +128,52 @@
     galaxy_38 = "#ACA754",
     galaxy_39 = "#097296",
     galaxy_40 = "#8C027C"
+  ),
+  eclipse = c(
+    ion_cyan = "#70D9EB",
+    comet_coral = "#FF9876",
+    aurora_mint = "#88DCAC",
+    stellar_gold = "#F1CB68",
+    moon_lavender = "#C7A2F5",
+    orbit_rose = "#F58FC2",
+    ice_blue = "#77A7FF",
+    alien_chartreuse = "#C5D180"
+  ),
+  afterglow = c(
+    ion_cyan = "#70D9EB",
+    comet_coral = "#FF9876",
+    aurora_mint = "#88DCAC",
+    stellar_gold = "#F1CB68",
+    moon_lavender = "#C7A2F5",
+    orbit_rose = "#F58FC2",
+    ice_blue = "#77A7FF",
+    alien_chartreuse = "#C5D180",
+    verdant_signal = "#1FA414",
+    meteor_amber = "#C87E00",
+    tidal_teal_light = "#419C91",
+    olive_starlight = "#93905A"
+  ),
+  deepfield = c(
+    ion_cyan = "#70D9EB",
+    comet_coral = "#FF9876",
+    aurora_mint = "#88DCAC",
+    stellar_gold = "#F1CB68",
+    moon_lavender = "#C7A2F5",
+    orbit_rose = "#F58FC2",
+    ice_blue = "#77A7FF",
+    alien_chartreuse = "#C5D180",
+    verdant_signal = "#1FA414",
+    meteor_amber = "#C87E00",
+    tidal_teal_light = "#419C91",
+    olive_starlight = "#93905A",
+    nova_rose = "#F94F70",
+    violet_flux = "#DE54DC",
+    glacial_blue = "#3899B7",
+    bio_lime = "#79EE61",
+    apricot_halo = "#FECAA2",
+    dust_umber = "#B78263",
+    solar_vermilion = "#FC5234",
+    brass_glow = "#B19F00"
   )
 )
 
@@ -146,7 +192,9 @@ otherworlds_palettes <- function() {
 #'
 #' @param n Number of colours to return. Defaults to every colour in the
 #'   selected palette.
-#' @param palette One of `"nebula"`, `"stellar"`, `"cosmic"`,\n#'   `"galaxy40"`, or `"galaxy40_max"`.
+#' @param palette Name from `otherworlds_palettes()`: `nebula`, `stellar`,
+#'   `cosmic`, `galaxy40`, `galaxy40_max`, `eclipse`, `afterglow`,
+#'   or `deepfield`.
 #' @param direction Use `1` for the original order or `-1` to reverse it.
 #'
 #' @return A named character vector of hexadecimal colours.
