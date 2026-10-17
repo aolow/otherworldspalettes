@@ -22,9 +22,10 @@ if (requireNamespace("ggplot2", quietly = TRUE)) {
     ggplot2::geom_tile() +
     scale_fill_otherworlds_c(palette = "ion_balance", limits = c(-1, 1))
   stopifnot(inherits(ggplot2::ggplot_build(q), "ggplot_built"))
-  stopifnot(inherits(try(
-    ggplot2::ggplot(data.frame(x = 1:21, group = factor(1:21)),
-                    ggplot2::aes(x, fill = group)) +
-      ggplot2::geom_bar() + scale_fill_otherworlds(palette = "cosmic")
-    |> ggplot2::ggplot_build(), silent = TRUE), "try-error"))
+  p_many <- ggplot2::ggplot(
+    data.frame(x = 1:21, group = factor(1:21)),
+    ggplot2::aes(x, fill = group)
+  ) + ggplot2::geom_bar() + scale_fill_otherworlds(palette = "cosmic")
+  stopifnot(inherits(try(ggplot2::ggplot_build(p_many),
+                         silent = TRUE), "try-error"))
 }
