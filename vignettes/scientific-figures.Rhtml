@@ -1,0 +1,54 @@
+<!--
+%\VignetteIndexEntry{Scientific figures with Other Worlds palettes}
+%\VignetteEngine{knitr::knitr}
+%\VignetteEncoding{UTF-8}
+-->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Scientific figures with Other Worlds</title>
+<style>body{font-family:system-ui,sans-serif;max-width:940px;margin:2rem auto;padding:1rem;line-height:1.5;color:#25314f}img{max-width:100%}code{background:#eef1f5;padding:2px 4px}</style></head>
+<body><h1>Scientific figures with Other Worlds palettes</h1>
+<p>These examples demonstrate the role of the palette rather than validate the data.
+The datasets below are synthetic or built into R. Color is supplementary to labels and annotations.</p>
+<!--begin.rcode setup, echo=FALSE
+knitr::opts_chunk$set(fig.width=7, fig.height=4, dpi=120)
+library(otherworldspalettes)
+end.rcode-->
+<h2>Cluster scatterplot: UMAP-style synthetic projection</h2>
+<p>These coordinates are simulated for demonstration only, not a computed UMAP.
+In real single-cell analysis, preserve stable factor levels for group/color consistency.</p>
+<!--begin.rcode umap, echo=TRUE
+set.seed(42)
+cluster <- factor(rep(c("Epithelial","Fibroblast","Immune","Endothelial"), each=100))
+centers <- matrix(c(-2,-1, 2,1, -1,2, 2,-2), ncol=2, byrow=TRUE)
+x <- rnorm(400, rep(centers[,1], each=100), .6)
+y <- rnorm(400, rep(centers[,2], each=100), .6)
+plot(x,y,col=otherworlds_palette(4,"nebula")[as.integer(cluster)],
+     pch=19,cex=.6,xlab="Embedding 1",ylab="Embedding 2",
+     main="Synthetic cluster projection")
+legend("topright",legend=levels(cluster), col=otherworlds_palette(4,"nebula"),
+       pch=19,cex=.65,bty="n")
+end.rcode-->
+<h2>Expression heatmap: magnitude</h2>
+<p>For nonnegative intensity or expression, sequential palettes are usually easier
+to interpret than a centered diverging map.</p>
+<!--begin.rcode seqheat, echo=TRUE
+mat <- as.matrix(USArrests)
+mat <- sweep(mat,2,apply(mat,2,max),"/")
+heatmap(mat, col=otherworlds_continuous_palette(101,"blue_hour"),
+        scale="none", margins=c(7,5), main="Normalized intensity")
+end.rcode-->
+<h2>Signed effect heatmap: zero-centered</h2>
+<p>Use symmetric breaks for a genuinely centered scale.
+The neutral midpoint represents zero, but the colors have not been validated as
+perceptually uniform.</p>
+<!--begin.rcode divheat, echo=TRUE
+z <- scale(USArrests)
+L <- max(abs(z))
+breaks <- seq(-L,L,length.out=102)
+heatmap(z, col=otherworlds_continuous_palette(101,"ion_balance"),
+        breaks=breaks, scale="none", margins=c(7,5),
+        main="Standardized signed changes")
+end.rcode-->
+<p>Always annotate effect sizes, use neutral backgrounds, and test grayscale
+and color-vision-deficiency simulations for the actual rendering context.</p>
+</body></html>

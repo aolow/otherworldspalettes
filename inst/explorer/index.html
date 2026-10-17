@@ -1,0 +1,162 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Other Worlds palette explorer</title>
+<style>body{background:#101827;color:#eef3f7;font:15px system-ui,sans-serif;max-width:1000px;margin:3rem auto;padding:0 1rem}a{color:#93d9f0}h1{margin-bottom:0}p{color:#b9c6d3}main{display:grid;gap:1rem}.card{border:1px solid #374357;background:#192437;border-radius:12px;padding:1rem}.bar{display:flex;height:62px;border-radius:8px;overflow:hidden;margin:.7rem 0}.swatch{flex:1;min-width:0}.hex{font-size:12px;color:#b9c6d3;overflow-wrap:anywhere}select{background:#26374d;color:white;padding:8px;border:1px solid #67798e;border-radius:6px}</style>
+</head><body><h1>Other Worlds palette explorer</h1>
+<p>Art-inspired colors for scientific figures. For quantitative data, compare against a validated scientific colormap and test the final rendering.</p>
+<label for="palette">Palette</label> <select id="palette"></select><main id="output"></main>
+<script>
+const colors={
+  "nebula": [
+    "#009E91",
+    "#BE2E4A",
+    "#9ED9E5",
+    "#F4C430",
+    "#60758C",
+    "#F58231",
+    "#4E91D8",
+    "#7A8B22"
+  ],
+  "stellar": [
+    "#009E91",
+    "#BE2E4A",
+    "#9ED9E5",
+    "#F4C430",
+    "#60758C",
+    "#F58231",
+    "#4E91D8",
+    "#7A8B22",
+    "#C13C91",
+    "#00A65A",
+    "#A68AD5",
+    "#A7C636"
+  ],
+  "cosmic": [
+    "#009E91",
+    "#BE2E4A",
+    "#9ED9E5",
+    "#F4C430",
+    "#60758C",
+    "#F58231",
+    "#4E91D8",
+    "#7A8B22",
+    "#C13C91",
+    "#00A65A",
+    "#A68AD5",
+    "#A7C636",
+    "#1859A9",
+    "#8C5A3C",
+    "#8046B2",
+    "#F3D9A2",
+    "#25314F",
+    "#D5A267",
+    "#00B9D8",
+    "#D94330"
+  ],
+  "emerald_void": [
+    "#071B1A",
+    "#0B3D35",
+    "#117A65",
+    "#41B883",
+    "#C9F2CD"
+  ],
+  "blue_hour": [
+    "#080B2B",
+    "#142B5F",
+    "#185A9D",
+    "#2E8BC0",
+    "#78C6D0",
+    "#D7F2E9"
+  ],
+  "red_giant": [
+    "#19080F",
+    "#4A1024",
+    "#8A1C32",
+    "#C43A3F",
+    "#EA7555",
+    "#FFD0A6"
+  ],
+  "magenta_orbit": [
+    "#160A25",
+    "#3C145E",
+    "#77207D",
+    "#B82E86",
+    "#E75A9B",
+    "#F7BCD0"
+  ],
+  "tidal_emerald": [
+    "#081126",
+    "#173B6C",
+    "#1C6F91",
+    "#169A88",
+    "#55BF78",
+    "#D5E887"
+  ],
+  "supernova": [
+    "#0B102A",
+    "#29477F",
+    "#7A477E",
+    "#C75D67",
+    "#D5A85C",
+    "#C9E8E2"
+  ],
+  "solar_tide": [
+    "#1859A9",
+    "#F4C430",
+    "#BE2E4A"
+  ],
+  "alien_bloom": [
+    "#087F5B",
+    "#F3D9A2",
+    "#C13C91"
+  ],
+  "cosmic_shore": [
+    "#51317A",
+    "#9ED9E5",
+    "#D94330"
+  ],
+  "signal_fire": [
+    "#07122E",
+    "#0066FF",
+    "#FFF200",
+    "#FF3B00",
+    "#7A001D"
+  ],
+  "ultraviolet": [
+    "#12002E",
+    "#6A00FF",
+    "#00E5FF",
+    "#FF2E88",
+    "#4A001A"
+  ],
+  "ion_balance": [
+    "#203E65",
+    "#5989B0",
+    "#F2F2F0",
+    "#E5A26B",
+    "#953F35"
+  ],
+  "stellar_balance": [
+    "#493570",
+    "#9385B3",
+    "#F2F2F0",
+    "#BB9C69",
+    "#68452B"
+  ],
+  "ember_balance": [
+    "#234D54",
+    "#6E9EA2",
+    "#F2F2F0",
+    "#CC8D8A",
+    "#843A52"
+  ],
+  "alien_heat": [
+    "#002C24",
+    "#00B86B",
+    "#F7F000",
+    "#FF3D81",
+    "#360039"
+  ]
+};
+const picker=document.getElementById("palette"),output=document.getElementById("output");
+Object.keys(colors).forEach(name=>{const o=document.createElement("option");o.value=name;o.textContent=name;picker.append(o)});
+function render(){const name=picker.value,arr=colors[name];output.replaceChildren();const card=document.createElement("section");card.className="card";const title=document.createElement("h2");title.textContent=name;card.append(title);const bar=document.createElement("div");bar.className="bar";arr.forEach(c=>{const sw=document.createElement("div");sw.className="swatch";sw.style.background=c;sw.title=c;bar.append(sw)});card.append(bar);const codes=document.createElement("p");codes.className="hex";codes.textContent=arr.join("  ·  ");card.append(codes);output.append(card)}picker.addEventListener("change",render);render();
+</script></body></html>
