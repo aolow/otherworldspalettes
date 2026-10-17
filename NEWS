@@ -1,3 +1,12 @@
+# otherworldspalettes 0.2.0
+
+* Added three neutral-centered scientific diverging gradients:
+  `ion_balance`, `stellar_balance`, and `ember_balance`.
+* Added a local palette explorer, scientific-figure vignette and palette
+  selection guidance, with explicit limitations on perceptual uniformity.
+* Expanded automated checks for ggplot2 scales and palette edge cases.
+* Updated maintainer metadata and linked the artist's *Other Worlds* book.
+
 # otherworldspalettes 0.1.0
 
 * Initial release with 8-, 12-, and 20-colour qualitative palettes.
