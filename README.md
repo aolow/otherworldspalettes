@@ -23,7 +23,7 @@ individual book pages or a claim of universal perceptual uniformity.
 
 ![All three Other Worlds palettes](man/figures/all-palettes.png)
 
-The package contains three **nested sizes of one palette system**, rather than
+The original package defines three **nested sizes of one palette system**, rather than
 three unrelated colour schemes:
 
 - `nebula` contains 8 colours and is the recommended default for most figures.
@@ -39,6 +39,48 @@ For consistent group-to-color assignments across figures, also keep the
 category or factor level order fixed in your plotting code. The package's
 accessors and ggplot2 scales default to `cosmic`; explicitly select
 `palette = "nebula"` for the recommended eight-color starting point.
+
+## Experimental 40-category palettes
+
+![Galaxy 40 candidates side by side](man/figures/galaxy40-comparison.svg)
+
+Two distinct **qualitative** palettes are available as candidates for
+single-cell cluster IDs, cell types, treatment arms, and other categorical
+figures with up to 40 groups:
+
+- `galaxy40` extends `cosmic` by 20 new colors. Its first 20 values
+  **and names** exactly match `cosmic`, making it a stable extension when
+  existing plots already use those assignments.
+- `galaxy40_max` reoptimizes all 40 colors simultaneously with no
+  requirement to preserve the original 20. **Do not expect category colors
+  to match previous `cosmic` plots.**
+
+```r
+# Forty group colors, in a fixed order:
+colors <- otherworlds_palette(40, "galaxy40")
+colors_max <- otherworlds_palette(40, "galaxy40_max")
+
+# In ggplot2, set factor levels explicitly so group/color mappings remain stable.
+df$cell_type <- factor(df$cell_type, levels = sort(unique(df$cell_type)))
+ggplot(df, aes(UMAP_1, UMAP_2, colour = cell_type)) +
+  geom_point(size = 0.6) +
+  scale_colour_otherworlds(palette = "galaxy40")
+```
+
+A set of 40 colors will not provide reliable effortless identification of
+every category, particularly for tiny marks, low-opacity dots, overlapping
+clusters, print, or color-vision deficiencies. Label clusters directly,
+add shapes or facets where useful, use a white or dark outline for small
+marks, and consider interactive hover for dense cell atlases. The same
+40-category palette is not appropriate for signed numerical gradients.
+
+These candidates were generated with a seeded, Glasbey-inspired greedy
+maximin search using CIEDE2000 distances and **approximate** protan/deutan
+simulations at 65% severity. Simulations are only a screening tool,
+not an accessibility certification or a prediction for all viewers.
+See [the comparison and limitations](design/galaxy40/README.md), and
+`vignette("galaxy40", package = "otherworldspalettes")` for plots of
+synthetic clusters and annotation strips.
 
 ## Installation
 
