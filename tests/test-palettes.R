@@ -28,7 +28,7 @@ stopifnot(
       magenta_orbit = 6L, tidal_emerald = 6L, supernova = 6L,
       solar_tide = 3L, alien_bloom = 3L, cosmic_shore = 3L,
       signal_fire = 5L, ultraviolet = 5L,
-      ion_balance = 6L, stellar_balance = 5L, ember_balance = 5L,
+      ion_balance = 5L, stellar_balance = 5L, ember_balance = 5L,
       alien_heat = 5L)
   )
 )
