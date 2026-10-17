@@ -5,6 +5,20 @@ derived from the *Other Worlds* art project. Discrete colours are deliberately
 ordered so neighbouring series jump across hue and lightness; continuous maps
 move smoothly through deep-space shadows into luminous atmospheric colour.
 
+## From the artwork to the palettes
+
+*Other Worlds* grew out of my original paintings and drawings of imagined
+landscapes, strange skies, and cosmic light. Those images also inspired
+[*Other Worlds*, my coloring and creative activity book](https://www.olaolowart.com/other-worlds),
+which invites readers to explore color, texture, light, and atmosphere in
+their own way.
+
+I work in both art and science, and this R package brings those two interests
+together. The palettes translate the mood and color relationships of the
+artwork into a practical vocabulary for scientific graphics. They are
+artist-directed adaptations for visualization, not exact reproductions of
+individual book pages or a claim of universal perceptual uniformity.
+
 ## Palettes
 
 ![All three Other Worlds palettes](man/figures/all-palettes.png)
@@ -16,10 +30,15 @@ three unrelated colour schemes:
 - `stellar` contains the same 8 colours plus 4 additional colours, for 12 total.
 - `cosmic` contains all `stellar` colours plus 8 additional colours, for 20 total.
 
-This means a figure can grow from `nebula` to `stellar` or `cosmic` without
-changing the colours already assigned to its existing groups. Within each
+Because the palettes are nested, you can expand from `nebula` to `stellar`
+or `cosmic` without changing the existing palette entries. Within each
 palette, the order jumps across hue and lightness to keep neighbouring groups
 visually distinct.
+
+For consistent group-to-color assignments across figures, also keep the
+category or factor level order fixed in your plotting code. The package's
+accessors and ggplot2 scales default to `cosmic`; explicitly select
+`palette = "nebula"` for the recommended eight-color starting point.
 
 ## Installation
 
@@ -53,7 +72,7 @@ figures that must remain easy to distinguish in print.
 
 ## Continuous palettes
 
-![Nine continuous Other Worlds palettes](man/figures/continuous-palettes.png)
+![Six sequential Other Worlds palettes](man/figures/continuous-palettes.png)
 
 The package also includes six continuous, dark-to-light palettes. The first
 four explore a focused hue family; the final two move across hues in the spirit
@@ -88,6 +107,13 @@ centers, and more saturated transitions:
   and deep plum.
 
 ![High-contrast heatmap palettes](man/figures/high-contrast-heatmaps.png)
+
+For centered, signed data (such as changes relative to a baseline), set
+symmetric color limits around zero if zero should align with the middle
+color. These artist-inspired gradients have not been established as
+perceptually uniform or color-vision-deficiency-safe; for quantitative
+interpretation, check the rendered figure and consider labels or a
+validated scientific colormap as a comparison.
 
 See `vignette("heatmaps", package = "otherworldspalettes")` for side-by-side
 examples and guidance on choosing a palette.
