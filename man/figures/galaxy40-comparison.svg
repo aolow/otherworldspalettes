@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="980" viewBox="0 0 1180 980">
+<rect width="1180" height="980" fill="#f7f9fc"/>
+<style>text{font-family:Arial,Helvetica,sans-serif}.headline{font-size:26px;font-weight:700;fill:#1a283e}.title{font-size:21px;font-weight:700;fill:#1a283e}.note{font-size:13px;fill:#536177}.num{font-size:12px;font-weight:700}.hex{font-family:monospace;font-size:12px}</style>
+<text x="40" y="47" class="headline">Other Worlds | Galaxy 40 candidates</text>
+<text x="40" y="71" class="note">40 qualitative colors each | design candidates for high-cardinality scientific plots</text>
+<text x="40" y="105" class="title">Galaxy 40 | Original Cosmic 20 preserved</text>
+<rect x="40" y="125" width="100" height="82" rx="6" fill="#009E91" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="48" y="146" fill="#fff" class="num">01</text>
+<text x="48" y="192" fill="#fff" class="hex">#009E91</text>
+<rect x="150" y="125" width="100" height="82" rx="6" fill="#BE2E4A" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="158" y="146" fill="#fff" class="num">02</text>
+<text x="158" y="192" fill="#fff" class="hex">#BE2E4A</text>
+<rect x="260" y="125" width="100" height="82" rx="6" fill="#9ED9E5" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="268" y="146" fill="#172439" class="num">03</text>
+<text x="268" y="192" fill="#172439" class="hex">#9ED9E5</text>
+<rect x="370" y="125" width="100" height="82" rx="6" fill="#F4C430" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="378" y="146" fill="#172439" class="num">04</text>
+<text x="378" y="192" fill="#172439" class="hex">#F4C430</text>
+<rect x="480" y="125" width="100" height="82" rx="6" fill="#60758C" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="488" y="146" fill="#fff" class="num">05</text>
+<text x="488" y="192" fill="#fff" class="hex">#60758C</text>
+<rect x="590" y="125" width="100" height="82" rx="6" fill="#F58231" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="598" y="146" fill="#172439" class="num">06</text>
+<text x="598" y="192" fill="#172439" class="hex">#F58231</text>
+<rect x="700" y="125" width="100" height="82" rx="6" fill="#4E91D8" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="708" y="146" fill="#172439" class="num">07</text>
+<text x="708" y="192" fill="#172439" class="hex">#4E91D8</text>
+<rect x="810" y="125" width="100" height="82" rx="6" fill="#7A8B22" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="818" y="146" fill="#fff" class="num">08</text>
+<text x="818" y="192" fill="#fff" class="hex">#7A8B22</text>
+<rect x="920" y="125" width="100" height="82" rx="6" fill="#C13C91" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="928" y="146" fill="#fff" class="num">09</text>
+<text x="928" y="192" fill="#fff" class="hex">#C13C91</text>
+<rect x="1030" y="125" width="100" height="82" rx="6" fill="#00A65A" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="1038" y="146" fill="#fff" class="num">10</text>
+<text x="1038" y="192" fill="#fff" class="hex">#00A65A</text>
+<rect x="40" y="219" width="100" height="82" rx="6" fill="#A68AD5" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="48" y="240" fill="#172439" class="num">11</text>
+<text x="48" y="286" fill="#172439" class="hex">#A68AD5</text>
+<rect x="150" y="219" width="100" height="82" rx="6" fill="#A7C636" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="158" y="240" fill="#172439" class="num">12</text>
+<text x="158" y="286" fill="#172439" class="hex">#A7C636</text>
+<rect x="260" y="219" width="100" height="82" rx="6" fill="#1859A9" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="268" y="240" fill="#fff" class="num">13</text>
+<text x="268" y="286" fill="#fff" class="hex">#1859A9</text>
+<rect x="370" y="219" width="100" height="82" rx="6" fill="#8C5A3C" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="378" y="240" fill="#fff" class="num">14</text>
+<text x="378" y="286" fill="#fff" class="hex">#8C5A3C</text>
+<rect x="480" y="219" width="100" height="82" rx="6" fill="#8046B2" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="488" y="240" fill="#fff" class="num">15</text>
+<text x="488" y="286" fill="#fff" class="hex">#8046B2</text>
+<rect x="590" y="219" width="100" height="82" rx="6" fill="#F3D9A2" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="598" y="240" fill="#172439" class="num">16</text>
+<text x="598" y="286" fill="#172439" class="hex">#F3D9A2</text>
+<rect x="700" y="219" width="100" height="82" rx="6" fill="#25314F" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="708" y="240" fill="#fff" class="num">17</text>
+<text x="708" y="286" fill="#fff" class="hex">#25314F</text>
+<rect x="810" y="219" width="100" height="82" rx="6" fill="#D5A267" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="818" y="240" fill="#172439" class="num">18</text>
+<text x="818" y="286" fill="#172439" class="hex">#D5A267</text>
+<rect x="920" y="219" width="100" height="82" rx="6" fill="#00B9D8" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="928" y="240" fill="#172439" class="num">19</text>
+<text x="928" y="286" fill="#172439" class="hex">#00B9D8</text>
+<rect x="1030" y="219" width="100" height="82" rx="6" fill="#D94330" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="1038" y="240" fill="#fff" class="num">20</text>
+<text x="1038" y="286" fill="#fff" class="hex">#D94330</text>
+<rect x="40" y="313" width="100" height="82" rx="6" fill="#08523D" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="48" y="334" fill="#fff" class="num">21</text>
+<text x="48" y="380" fill="#fff" class="hex">#08523D</text>
+<rect x="150" y="313" width="100" height="82" rx="6" fill="#FD89A2" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="158" y="334" fill="#172439" class="num">22</text>
+<text x="158" y="380" fill="#172439" class="hex">#FD89A2</text>
+<rect x="260" y="313" width="100" height="82" rx="6" fill="#405000" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="268" y="334" fill="#fff" class="num">23</text>
+<text x="268" y="380" fill="#fff" class="hex">#405000</text>
+<rect x="370" y="313" width="100" height="82" rx="6" fill="#6F3B53" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="378" y="334" fill="#fff" class="num">24</text>
+<text x="378" y="380" fill="#fff" class="hex">#6F3B53</text>
+<rect x="480" y="313" width="100" height="82" rx="6" fill="#8F1000" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="488" y="334" fill="#fff" class="num">25</text>
+<text x="488" y="380" fill="#fff" class="hex">#8F1000</text>
+<rect x="590" y="313" width="100" height="82" rx="6" fill="#5B7857" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="598" y="334" fill="#fff" class="num">26</text>
+<text x="598" y="380" fill="#fff" class="hex">#5B7857</text>
+<rect x="700" y="313" width="100" height="82" rx="6" fill="#B78576" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="708" y="334" fill="#172439" class="num">27</text>
+<text x="708" y="380" fill="#172439" class="hex">#B78576</text>
+<rect x="810" y="313" width="100" height="82" rx="6" fill="#D414FE" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="818" y="334" fill="#fff" class="num">28</text>
+<text x="818" y="380" fill="#fff" class="hex">#D414FE</text>
+<rect x="920" y="313" width="100" height="82" rx="6" fill="#AF7993" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="928" y="334" fill="#172439" class="num">29</text>
+<text x="928" y="380" fill="#172439" class="hex">#AF7993</text>
+<rect x="1030" y="313" width="100" height="82" rx="6" fill="#F966D4" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="1038" y="334" fill="#172439" class="num">30</text>
+<text x="1038" y="380" fill="#172439" class="hex">#F966D4</text>
+<rect x="40" y="407" width="100" height="82" rx="6" fill="#1B7675" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="48" y="428" fill="#fff" class="num">31</text>
+<text x="48" y="474" fill="#fff" class="hex">#1B7675</text>
+<rect x="150" y="407" width="100" height="82" rx="6" fill="#FF2078" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="158" y="428" fill="#fff" class="num">32</text>
+<text x="158" y="474" fill="#fff" class="hex">#FF2078</text>
+<rect x="260" y="407" width="100" height="82" rx="6" fill="#167706" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="268" y="428" fill="#fff" class="num">33</text>
+<text x="268" y="474" fill="#fff" class="hex">#167706</text>
+<rect x="370" y="407" width="100" height="82" rx="6" fill="#98AE88" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="378" y="428" fill="#172439" class="num">34</text>
+<text x="378" y="474" fill="#172439" class="hex">#98AE88</text>
+<rect x="480" y="407" width="100" height="82" rx="6" fill="#7F0A76" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="488" y="428" fill="#fff" class="num">35</text>
+<text x="488" y="474" fill="#fff" class="hex">#7F0A76</text>
+<rect x="590" y="407" width="100" height="82" rx="6" fill="#4050FF" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="598" y="428" fill="#fff" class="num">36</text>
+<text x="598" y="474" fill="#fff" class="hex">#4050FF</text>
+<rect x="700" y="407" width="100" height="82" rx="6" fill="#AC6809" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="708" y="428" fill="#fff" class="num">37</text>
+<text x="708" y="474" fill="#fff" class="hex">#AC6809</text>
+<rect x="810" y="407" width="100" height="82" rx="6" fill="#5C4D74" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="818" y="428" fill="#fff" class="num">38</text>
+<text x="818" y="474" fill="#fff" class="hex">#5C4D74</text>
+<rect x="920" y="407" width="100" height="82" rx="6" fill="#F8746A" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="928" y="428" fill="#172439" class="num">39</text>
+<text x="928" y="474" fill="#172439" class="hex">#F8746A</text>
+<rect x="1030" y="407" width="100" height="82" rx="6" fill="#0000EF" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="1038" y="428" fill="#fff" class="num">40</text>
+<text x="1038" y="474" fill="#fff" class="hex">#0000EF</text>
+<text x="40" y="534" class="title">Galaxy 40 Max | All 40 colors optimized together</text>
+<rect x="40" y="554" width="100" height="82" rx="6" fill="#8145AF" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="48" y="575" fill="#fff" class="num">01</text>
+<text x="48" y="621" fill="#fff" class="hex">#8145AF</text>
+<rect x="150" y="554" width="100" height="82" rx="6" fill="#3EC30A" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="158" y="575" fill="#172439" class="num">02</text>
+<text x="158" y="621" fill="#172439" class="hex">#3EC30A</text>
+<rect x="260" y="554" width="100" height="82" rx="6" fill="#604000" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="268" y="575" fill="#fff" class="num">03</text>
+<text x="268" y="621" fill="#fff" class="hex">#604000</text>
+<rect x="370" y="554" width="100" height="82" rx="6" fill="#FF7070" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="378" y="575" fill="#172439" class="num">04</text>
+<text x="378" y="621" fill="#172439" class="hex">#FF7070</text>
+<rect x="480" y="554" width="100" height="82" rx="6" fill="#12B9F3" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="488" y="575" fill="#172439" class="num">05</text>
+<text x="488" y="621" fill="#172439" class="hex">#12B9F3</text>
+<rect x="590" y="554" width="100" height="82" rx="6" fill="#147769" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="598" y="575" fill="#fff" class="num">06</text>
+<text x="598" y="621" fill="#fff" class="hex">#147769</text>
+<rect x="700" y="554" width="100" height="82" rx="6" fill="#AF1040" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="708" y="575" fill="#fff" class="num">07</text>
+<text x="708" y="621" fill="#fff" class="hex">#AF1040</text>
+<rect x="810" y="554" width="100" height="82" rx="6" fill="#FF70EF" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="818" y="575" fill="#172439" class="num">08</text>
+<text x="818" y="621" fill="#172439" class="hex">#FF70EF</text>
+<rect x="920" y="554" width="100" height="82" rx="6" fill="#8F8457" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="928" y="575" fill="#fff" class="num">09</text>
+<text x="928" y="621" fill="#fff" class="hex">#8F8457</text>
+<rect x="1030" y="554" width="100" height="82" rx="6" fill="#F69307" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="1038" y="575" fill="#172439" class="num">10</text>
+<text x="1038" y="621" fill="#172439" class="hex">#F69307</text>
+<rect x="40" y="648" width="100" height="82" rx="6" fill="#04C1AB" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="48" y="669" fill="#172439" class="num">11</text>
+<text x="48" y="715" fill="#172439" class="hex">#04C1AB</text>
+<rect x="150" y="648" width="100" height="82" rx="6" fill="#CF3B01" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="158" y="669" fill="#fff" class="num">12</text>
+<text x="158" y="715" fill="#fff" class="hex">#CF3B01</text>
+<rect x="260" y="648" width="100" height="82" rx="6" fill="#A9748E" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="268" y="669" fill="#fff" class="num">13</text>
+<text x="268" y="715" fill="#fff" class="hex">#A9748E</text>
+<rect x="370" y="648" width="100" height="82" rx="6" fill="#097AF0" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="378" y="669" fill="#fff" class="num">14</text>
+<text x="378" y="715" fill="#fff" class="hex">#097AF0</text>
+<rect x="480" y="648" width="100" height="82" rx="6" fill="#1C7411" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="488" y="669" fill="#fff" class="num">15</text>
+<text x="488" y="715" fill="#fff" class="hex">#1C7411</text>
+<rect x="590" y="648" width="100" height="82" rx="6" fill="#683554" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="598" y="669" fill="#fff" class="num">16</text>
+<text x="598" y="715" fill="#fff" class="hex">#683554</text>
+<rect x="700" y="648" width="100" height="82" rx="6" fill="#D60797" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="708" y="669" fill="#fff" class="num">17</text>
+<text x="708" y="715" fill="#fff" class="hex">#D60797</text>
+<rect x="810" y="648" width="100" height="82" rx="6" fill="#8383B2" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="818" y="669" fill="#172439" class="num">18</text>
+<text x="818" y="715" fill="#172439" class="hex">#8383B2</text>
+<rect x="920" y="648" width="100" height="82" rx="6" fill="#895E4B" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="928" y="669" fill="#fff" class="num">19</text>
+<text x="928" y="715" fill="#fff" class="hex">#895E4B</text>
+<rect x="1030" y="648" width="100" height="82" rx="6" fill="#98AE88" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="1038" y="669" fill="#172439" class="num">20</text>
+<text x="1038" y="715" fill="#172439" class="hex">#98AE88</text>
+<rect x="40" y="742" width="100" height="82" rx="6" fill="#209CA8" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="48" y="763" fill="#fff" class="num">21</text>
+<text x="48" y="809" fill="#fff" class="hex">#209CA8</text>
+<rect x="150" y="742" width="100" height="82" rx="6" fill="#CF20FF" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="158" y="763" fill="#fff" class="num">22</text>
+<text x="158" y="809" fill="#fff" class="hex">#CF20FF</text>
+<rect x="260" y="742" width="100" height="82" rx="6" fill="#205030" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="268" y="763" fill="#fff" class="num">23</text>
+<text x="268" y="809" fill="#fff" class="hex">#205030</text>
+<rect x="370" y="742" width="100" height="82" rx="6" fill="#43496C" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="378" y="763" fill="#fff" class="num">24</text>
+<text x="378" y="809" fill="#fff" class="hex">#43496C</text>
+<rect x="480" y="742" width="100" height="82" rx="6" fill="#B07805" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="488" y="763" fill="#fff" class="num">25</text>
+<text x="488" y="809" fill="#fff" class="hex">#B07805</text>
+<rect x="590" y="742" width="100" height="82" rx="6" fill="#990305" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="598" y="763" fill="#fff" class="num">26</text>
+<text x="598" y="809" fill="#fff" class="hex">#990305</text>
+<rect x="700" y="742" width="100" height="82" rx="6" fill="#F70664" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="708" y="763" fill="#fff" class="num">27</text>
+<text x="708" y="809" fill="#fff" class="hex">#F70664</text>
+<rect x="810" y="742" width="100" height="82" rx="6" fill="#009F50" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="818" y="763" fill="#fff" class="num">28</text>
+<text x="818" y="809" fill="#fff" class="hex">#009F50</text>
+<rect x="920" y="742" width="100" height="82" rx="6" fill="#EF8FAF" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="928" y="763" fill="#172439" class="num">29</text>
+<text x="928" y="809" fill="#172439" class="hex">#EF8FAF</text>
+<rect x="1030" y="742" width="100" height="82" rx="6" fill="#B38AFD" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="1038" y="763" fill="#172439" class="num">30</text>
+<text x="1038" y="809" fill="#172439" class="hex">#B38AFD</text>
+<rect x="40" y="836" width="100" height="82" rx="6" fill="#CF9F80" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="48" y="857" fill="#172439" class="num">31</text>
+<text x="48" y="903" fill="#172439" class="hex">#CF9F80</text>
+<rect x="150" y="836" width="100" height="82" rx="6" fill="#005861" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="158" y="857" fill="#fff" class="num">32</text>
+<text x="158" y="903" fill="#fff" class="hex">#005861</text>
+<rect x="260" y="836" width="100" height="82" rx="6" fill="#BB9CC6" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="268" y="857" fill="#172439" class="num">33</text>
+<text x="268" y="903" fill="#172439" class="hex">#BB9CC6</text>
+<rect x="370" y="836" width="100" height="82" rx="6" fill="#084AFA" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="378" y="857" fill="#fff" class="num">34</text>
+<text x="378" y="903" fill="#fff" class="hex">#084AFA</text>
+<rect x="480" y="836" width="100" height="82" rx="6" fill="#EF7040" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="488" y="857" fill="#172439" class="num">35</text>
+<text x="488" y="903" fill="#172439" class="hex">#EF7040</text>
+<rect x="590" y="836" width="100" height="82" rx="6" fill="#B35D60" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="598" y="857" fill="#fff" class="num">36</text>
+<text x="598" y="903" fill="#fff" class="hex">#B35D60</text>
+<rect x="700" y="836" width="100" height="82" rx="6" fill="#638C04" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="708" y="857" fill="#fff" class="num">37</text>
+<text x="708" y="903" fill="#fff" class="hex">#638C04</text>
+<rect x="810" y="836" width="100" height="82" rx="6" fill="#ACA754" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="818" y="857" fill="#172439" class="num">38</text>
+<text x="818" y="903" fill="#172439" class="hex">#ACA754</text>
+<rect x="920" y="836" width="100" height="82" rx="6" fill="#097296" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="928" y="857" fill="#fff" class="num">39</text>
+<text x="928" y="903" fill="#fff" class="hex">#097296</text>
+<rect x="1030" y="836" width="100" height="82" rx="6" fill="#8C027C" stroke="#1f2c42" stroke-opacity=".28"/>
+<text x="1038" y="857" fill="#fff" class="num">40</text>
+<text x="1038" y="903" fill="#fff" class="hex">#8C027C</text>
+<text x="40" y="960" class="note">Accessibility caveat: with 40 groups, use direct labels, shape, faceting, or interactive identification, not color alone.</text>
+</svg>
