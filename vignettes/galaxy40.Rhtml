@@ -1,0 +1,57 @@
+<!--
+%\VignetteIndexEntry{Galaxy 40 categorical palette comparison}
+%\VignetteEngine{knitr::knitr}
+%\VignetteEncoding{UTF-8}
+-->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Galaxy 40: forty categorical colors</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:960px;margin:2rem auto;padding:1rem;color:#1d2c42}img{width:100%;height:auto}code{background:#edf0f5;padding:1px 4px}</style>
+</head><body>
+<h1>Galaxy 40: 40-category scientific plots</h1>
+<p><strong>Purpose:</strong> Compare two qualitative 40-color candidates. These
+colors represent category identities, not numeric magnitude. The example
+is a <em>synthetic cluster embedding</em>, not an actual UMAP analysis.</p>
+<!--begin.rcode setup, echo=FALSE
+knitr::opts_chunk$set(fig.width=10,fig.height=4.4,dpi=120)
+library(otherworldspalettes)
+set.seed(40)
+n <- 40L
+theta <- seq_len(n) * pi * (3-sqrt(5))
+radius <- sqrt(seq_len(n))*0.90
+centers <- cbind(radius*cos(theta),radius*sin(theta))
+group <- factor(rep(seq_len(n), each=32),levels=seq_len(n))
+x <- rep(centers[,1],each=32)+rnorm(length(group),sd=.32)
+y <- rep(centers[,2],each=32)+rnorm(length(group),sd=.32)
+end.rcode-->
+
+<h2>The same clusters, two different assignments</h2>
+<!--begin.rcode clusters, echo=TRUE, fig.width=10, fig.height=5
+op <- par(mfrow=c(1,2),mar=c(3,3,3,1))
+for (nm in c("galaxy40","galaxy40_max")) {
+  palette <- otherworlds_palette(n,nm)
+  plot(x,y,pch=19,cex=.55,col=unname(palette)[as.integer(group)],
+       main=nm,xlab="Embedding 1",ylab="Embedding 2")
+  text(centers[,1],centers[,2],seq_len(n),cex=.58,font=2,col="#182437")
+}
+par(op)
+end.rcode-->
+
+<h2>Heatmap annotation strips</h2>
+<p>Category strips can be more challenging than large cluster regions because
+the marks are narrow. Labels, legends, and grouping conventions are vital.</p>
+<!--begin.rcode strips, echo=TRUE, fig.width=10, fig.height=2.4
+op <- par(mfrow=c(2,1),mar=c(2.4,3,2,1))
+for(nm in c("galaxy40","galaxy40_max")) {
+  barplot(rep(1,n),col=otherworlds_palette(n,nm),border=NA,
+          space=0,axes=FALSE,main=nm)
+}
+par(op)
+end.rcode-->
+
+<p>Use stable factor levels across figures. Preserve \`cosmic\` color assignments
+with <code>galaxy40</code>; choose <code>galaxy40_max</code> only if reassignment
+of existing groups is acceptable. Neither option is guaranteed distinguishable
+to every viewer. For a scientific publication, use direct labeling or
+additional visual channels and review the figure in grayscale.</p>
+</body></html>
