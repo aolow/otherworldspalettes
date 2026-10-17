@@ -6,7 +6,7 @@ otherworlds_palette(n = NULL, palette = "cosmic", direction = 1)
 }
 \arguments{
 \item{n}{Number of colours to return. Defaults to the full palette.}
-\item{palette}{One of \code{"nebula"}, \code{"stellar"}, \code{"cosmic"}, \code{"galaxy40"}, or \code{"galaxy40_max"}.}
+\item{palette}{One of \code{"nebula"}, \code{"stellar"}, \code{"cosmic"}, \code{"galaxy40"}, or \code{"galaxy40_max"}, \code{"eclipse"}, \code{"afterglow"}, or \code{"deepfield"}.}
 \item{direction}{Use 1 for the original order or -1 to reverse it.}
 }
 \value{A named character vector of hexadecimal colours.}

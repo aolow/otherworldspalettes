@@ -15,7 +15,7 @@ scale_fill_otherworlds(..., palette = "cosmic", direction = 1,
 }
 \arguments{
 \item{...}{Arguments passed to \code{ggplot2::discrete_scale()}.}
-\item{palette}{One of \code{"nebula"}, \code{"stellar"}, or \code{"cosmic"}.}
+\item{palette}{One of the palette names from \code{otherworlds_palettes()}, including the dark-background families \code{"eclipse"}, \code{"afterglow"}, and \code{"deepfield"}.}
 \item{direction}{Use 1 for the original order or -1 to reverse it.}
 \item{aesthetics}{Character vector of aesthetics to scale.}
 }
