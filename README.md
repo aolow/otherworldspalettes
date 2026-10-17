@@ -74,7 +74,7 @@ figures that must remain easy to distinguish in print.
 
 ![Six sequential Other Worlds palettes](man/figures/continuous-palettes.png)
 
-The package also includes six continuous, dark-to-light palettes. The first
+The package includes six sequential, dark-to-light palettes. The first
 four explore a focused hue family; the final two move across hues in the spirit
 of perceptually smooth scientific colour maps.
 
@@ -108,6 +108,20 @@ centers, and more saturated transitions:
 
 ![High-contrast heatmap palettes](man/figures/high-contrast-heatmaps.png)
 
+### Neutral-centered maps for scientific comparisons
+
+Three additional diverging palettes have a light, neutral central anchor:
+
+- `ion_balance` pairs ocean blue with iron red.
+- `stellar_balance` pairs violet shadows with warm umber.
+- `ember_balance` pairs deep teal with muted raspberry.
+
+These provide a calmer alternative to the painting-led gradients for signed
+effects, standardized expression differences, and fold-change heatmaps.
+They are design candidates, **not yet certified perceptually uniform or
+color-vision-deficiency-safe**. Compare against a validated colormap for
+high-stakes numeric interpretation.
+
 For centered, signed data (such as changes relative to a baseline), set
 symmetric color limits around zero if zero should align with the middle
 color. These artist-inspired gradients have not been established as
@@ -129,3 +143,47 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 # Three-colour heatmap
 heatmap(volcano, col = otherworlds_continuous_palette(101, "solar_tide"))
 ```
+
+## Choosing a palette
+
+| Data | First choice | Notes |
+| --- | --- | --- |
+| Categorical, up to 8 groups | `nebula` | Also use shapes or labels |
+| Categorical, 9 to 12 | `stellar` | Check small marks carefully |
+| Categorical, 13 to 20 | `cosmic` | Prefer faceting when feasible |
+| Ordered magnitude | `tidal_emerald`, `blue_hour` | Check lightness ordering |
+| Signed, centered values | `ion_balance`, `stellar_balance`, `ember_balance` | Fix symmetric scale limits |
+| Expressive/artistic heatmaps | `alien_heat`, `ultraviolet`, `solar_tide` | Highly saturated centers can exaggerate zero |
+
+For a local interactive swatch explorer, open
+[`inst/explorer/index.html`](inst/explorer/index.html) in a browser.
+To see realistic scientific plots, see
+`vignette("scientific-figures", package = "otherworldspalettes")`.
+To run checks, use `R CMD check .` or the GitHub Actions workflow.
+
+### Signed heatmap example
+
+```r
+library(ggplot2)
+z <- as.matrix(scale(USArrests))
+m <- as.data.frame(as.table(z))
+names(m) <- c("state", "feature", "zscore")
+ggplot(m, aes(feature, state, fill = zscore)) +
+  geom_tile() +
+  scale_fill_otherworlds_c(
+    palette = "ion_balance",
+    limits = c(-max(abs(m$zscore)), max(abs(m$zscore)))
+  )
+```
+
+The negative and positive ends should be equally far from zero. If you use
+asymmetric limits, the visual midpoint no longer represents zero.
+
+## Interpretation and accessibility
+
+These are art-derived colors intended for figures, not calibrated measurements.
+Color contrast depends on mark size, background, display, and print process.
+Test grayscale and common color-vision deficiencies, label critical findings,
+and never encode a consequential distinction by color alone. Adjacent
+categorical colors are ordered for visual distinction, but no formal
+accessibility guarantee is asserted.
