@@ -1,3 +1,10 @@
+# Development (unreleased)
+
+* Added experimental 40-category `galaxy40` (preserves Cosmic 20)
+  and `galaxy40_max` (jointly optimized).
+* Added side-by-side visual comparison, provenance, and tests of
+  stable first-20 assignments and 40-group ggplot2 rendering.
+
 # otherworldspalettes 0.2.0
 
 * Added three neutral-centered scientific diverging gradients:
