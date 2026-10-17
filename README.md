@@ -50,13 +50,56 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 | Signed values centered at zero | `ion_balance` | `stellar_balance`, `ember_balance` |
 | Expressive or illustrative heatmaps | `solar_tide` | `alien_bloom`, `cosmic_shore`, `signal_fire`, `ultraviolet`, `alien_heat` |
 
-The 8-, 12-, and 20-color families are **nested**, so their original colors stay the same as you expand the number of groups. Keep factor levels fixed across figures to retain group-to-color assignments.
+The light-background family (`nebula` → `stellar` → `cosmic`) and the dark-background family (`eclipse` → `afterglow` → `deepfield`) each have nested 8-, 12-, and 20-color versions. Keep factor levels fixed across figures to preserve category assignments.
 
-`galaxy40` preserves the first 20 `cosmic` color assignments; `galaxy40_max` instead optimizes all 40 colors jointly. Use either for *categories*, not continuous values.
+### Extended categorical palettes: Galaxy 40
+
+![Galaxy 40 and Galaxy 40 Max comparison](man/figures/galaxy40-comparison.svg)
+
+Both support **up to 40 categories**, such as cell clusters or sample groups:
+
+- **`galaxy40`** retains the first 20 `cosmic` colors and names, so existing mappings can be preserved.
+- **`galaxy40_max`** optimizes all 40 colors together, without preserving earlier mappings.
+
+```r
+# Use either name with the same API as the original palettes.
+otherworlds_palette(40, "galaxy40")
+otherworlds_palette(40, "galaxy40_max")
+scale_colour_otherworlds(palette = "galaxy40")
+```
+
+Forty colors cannot guarantee easy recognition of every group. Direct labels, faceting, or other visual cues are especially important.
+
+### Dark-background palettes: Eclipse, Afterglow, Deepfield
+
+![Nested dark-background palette family](man/figures/dark-palettes.svg)
+
+These offer **8, 12, or 20 luminous categorical colors** for navy, charcoal, and black presentations. They are a separate family, not recolorings of the original palettes.
+
+```r
+# Eight categories against a dark slide background.
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point(size = 2.5) +
+  scale_colour_otherworlds(palette = "eclipse") +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.background = element_rect(fill = "#081126", color = NA),
+    panel.background = element_rect(fill = "#081126", color = NA),
+    panel.grid = element_blank(),
+    text = element_text(color = "#E8F0F5"),
+    axis.text = element_text(color = "#C8D7E1"),
+    legend.background = element_rect(fill = "#081126", color = NA),
+    legend.key = element_rect(fill = "#081126", color = NA)
+  )
+```
+
+### Continuous and heatmap colors
 
 ![Sequential palettes](man/figures/continuous-palettes.png)
 
-For swatches, scientific figure previews on white **and** dark backgrounds, and side-by-side comparisons, visit the **[visual gallery](docs/vignette-gallery.md)**.
+Use a **sequential** palette for magnitude and a **neutral-centered diverging** palette such as `ion_balance` for signed data with a meaningful zero. Other painting-derived gradients offer more expressive alternatives.
+
+For all families, scientific plot examples on white and dark backgrounds, and side-by-side comparisons, see the **[visual gallery](docs/vignette-gallery.md)** and [detailed palette guide](docs/palette-guide.md).
 
 ## Examples and documentation
 
