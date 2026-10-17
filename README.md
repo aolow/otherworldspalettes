@@ -5,6 +5,8 @@ derived from the *Other Worlds* art project. Discrete colours are deliberately
 ordered so neighbouring series jump across hue and lightness; continuous maps
 move smoothly through deep-space shadows into luminous atmospheric colour.
 
+**[View the figure gallery on GitHub](docs/vignette-gallery.md)**, including astronomy plots, Galaxy 40 comparisons, and dark slide examples. GitHub's source view of `.Rhtml` files does not render the figures.
+
 ## From the artwork to the palettes
 
 *Other Worlds* grew out of my original paintings and drawings of imagined
@@ -248,7 +250,8 @@ heatmap(volcano, col = otherworlds_continuous_palette(101, "solar_tide"))
 For a local interactive swatch explorer, open
 [`inst/explorer/index.html`](inst/explorer/index.html) in a browser.
 Select a background (navy, charcoal, black, or white) for comparison.
-To see illustrative scientific plots, see
+To browse illustrative figures without R, visit the [visual vignette gallery](docs/vignette-gallery.md).
+For executable R vignettes, see
 `vignette("scientific-figures", package = "otherworldspalettes")`,
 `vignette("space-figures", package = "otherworldspalettes")`, and
 `vignette("dark-slides", package = "otherworldspalettes")`.
