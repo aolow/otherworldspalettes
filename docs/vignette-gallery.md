@@ -1,53 +1,85 @@
-# Visual vignette gallery
+# Visual palette and vignette gallery
 
-**View figures directly on GitHub**, without needing R or opening the `.Rhtml` source files.
+View the palettes and scientific figure previews **directly on GitHub**, without installing R. Start with light-background scientific figures, then explore high-cardinality examples, continuous heatmaps, and dark-slide options.
 
-These browser-viewable **SVG visual previews** recreate the plots using the same stored palette hex colors and synthetic-data recipes. They are **illustrative representations**, not images exported from the installed R vignette engine. The original Rhtml files remain executable sources, and their exact random draws can differ.
+The original palette strip images are package assets. The chart SVGs below are illustrative recreations using the actual hex values and synthetic examples, **not renders exported from the R vignette engine**.
 
-## Space figures
+## 1. Light-background categorical palettes
 
-### 1. Hertzsprung–Russell-style diagram
+Best starting point for conventional papers, reports, and white-background plots.
 
-The three colored classes are simulated stellar populations, not observations.
+![Original Nebula, Stellar and Cosmic palette swatches](../man/figures/all-palettes.png)
+
+**Nebula (8)** is the recommended starting point, **Stellar (12)** and **Cosmic (20)** preserve the same first colors as you increase category count.
+
+### Example: scientific figure on white
+
+![Synthetic category scatterplot using Nebula on white](previews/light-scatter.svg)
+
+[Executable scientific-figures vignette](../vignettes/scientific-figures.Rhtml)
+
+## 2. Continuous palettes and heatmaps
+
+These gradients are designed for ordered quantities and for heatmaps, **not** for cluster identity labels.
+
+### Six sequential gradients
+
+![Sequential color palettes](../man/figures/continuous-palettes.png)
+
+### Painting-derived diverging gradients
+
+![Painting-derived heatmap palettes](../man/figures/three-colour-heatmaps.png)
+
+### Expressive high-contrast heatmaps
+
+![High-contrast heatmap palettes](../man/figures/high-contrast-heatmaps.png)
+
+The additional **neutral-centered** palettes, `ion_balance`, `stellar_balance`, and `ember_balance`, are intended for signed effects and comparisons relative to zero. In those plots, use symmetric color limits. All quantitative palettes still require validation for perceptual interpretation.
+
+[Executable heatmaps vignette](../vignettes/heatmaps.Rhtml)
+
+## 3. Many categories: Galaxy 40 comparison
+
+The same synthetic clusters appear with two competing color assignments, on a light background. **Galaxy 40** preserves Cosmic 20's first 20 assignments, while **Galaxy 40 Max** prioritizes overall separation without that compatibility requirement.
+
+![Galaxy 40 comparison](previews/galaxy40.svg)
+
+[Executable Galaxy 40 vignette](../vignettes/galaxy40.Rhtml)
+
+## 4. Space-inspired figures
+
+These are **synthetic**, not astronomical observations. They demonstrate different plotting tasks.
+
+### Hertzsprung–Russell-style diagram
 
 ![Synthetic H-R-style diagram](previews/hr-diagram.svg)
 
-### 2. All-sky density field
-
-An equirectangular synthetic Galactic band and central bulge, using a Supernova-inspired sequential gradient.
+### All-sky density field
 
 ![Synthetic all-sky density](previews/sky-density.svg)
 
-### 3. Exoplanet-style scatterplot
-
-Simulated exoplanet detections on logarithmic axes, grouped by method.
+### Exoplanet-style scatterplot
 
 ![Synthetic exoplanet scatterplot](previews/exoplanets.svg)
 
-### 4. Galaxy 40 comparison
+[Executable space-figures vignette](../vignettes/space-figures.Rhtml)
 
-The exact stored colors in both 40-category palettes on the same synthetic cluster geometry.
+## 5. Dark-background figures and slides
 
-![Galaxy 40 compatibility versus maximized distinction](previews/galaxy40.svg)
+These are alternative palettes for navy, charcoal, or black, **not** replacements for the original color families.
 
-[Executable space-figures vignette](../vignettes/space-figures.Rhtml) · [Executable Galaxy 40 vignette](../vignettes/galaxy40.Rhtml)
+### Eclipse (8), Afterglow (12), Deepfield (20)
 
-## Dark slides
+![Dark palette family](../man/figures/dark-palettes.svg)
 
-### 5. Scatterplot on charcoal
+### Scatterplot and line chart examples
 
-![Dark-background scatter](previews/dark-scatter.svg)
-
-### 6. Lines on navy
+![Dark-background scatterplot](previews/dark-scatter.svg)
 
 ![Dark-background lines](previews/dark-lines.svg)
-
-### 7. Full dark color family
-
-![Eclipse, Afterglow and Deepfield](../man/figures/dark-palettes.svg)
 
 [Executable dark-slides vignette](../vignettes/dark-slides.Rhtml)
 
 ---
 
-**Design caveats:** These palettes are not certified for color-vision accessibility or calibrated quantitative inference. Use direct labels, consider line types and shapes, and inspect plots in the intended viewing environment. Dark discrete colors do not replace sequential or diverging numeric colormaps.
+**Accessibility and provenance:** The illustrative chart previews are not an accessibility certification or faithful captures of Rhtml execution. Color performance depends on the background, shape, opacity, mark size, and viewing context. Label important differences, and use a validated quantitative colormap when the accuracy of the color encoding is consequential.

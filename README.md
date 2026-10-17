@@ -5,7 +5,7 @@ derived from the *Other Worlds* art project. Discrete colours are deliberately
 ordered so neighbouring series jump across hue and lightness; continuous maps
 move smoothly through deep-space shadows into luminous atmospheric colour.
 
-**[View the figure gallery on GitHub](docs/vignette-gallery.md)**, including astronomy plots, Galaxy 40 comparisons, and dark slide examples. GitHub's source view of `.Rhtml` files does not render the figures.
+**[Browse the palette and figure gallery](docs/vignette-gallery.md)** for light and dark palettes, heatmaps, Galaxy 40, and scientific examples.
 
 ## From the artwork to the palettes
 
@@ -21,7 +21,13 @@ artwork into a practical vocabulary for scientific graphics. They are
 artist-directed adaptations for visualization, not exact reproductions of
 individual book pages or a claim of universal perceptual uniformity.
 
-## Palettes
+## Quick start
+
+Use `nebula` for up to eight groups on light backgrounds, `tidal_emerald` for ordered values, and `ion_balance` for signed effects. The `eclipse` family is a separate choice for dark slides.
+
+[Browse visual examples by use case](docs/vignette-gallery.md).
+
+## Categorical palettes for light backgrounds
 
 ![All three Other Worlds palettes](man/figures/all-palettes.png)
 
@@ -42,7 +48,7 @@ category or factor level order fixed in your plotting code. The package's
 accessors and ggplot2 scales default to `cosmic`; explicitly select
 `palette = "nebula"` for the recommended eight-color starting point.
 
-## Dark-background qualitative palettes
+## Categorical palettes for dark backgrounds
 
 ![Eclipse, Afterglow, and Deepfield on navy](man/figures/dark-palettes.svg)
 
@@ -87,7 +93,7 @@ Explore examples in
 `vignette("space-figures", package = "otherworldspalettes")` and
 `vignette("dark-slides", package = "otherworldspalettes")`.
 
-## Experimental 40-category palettes
+## High-cardinality categorical palettes (40 groups)
 
 ![Galaxy 40 candidates side by side](man/figures/galaxy40-comparison.svg)
 
@@ -136,7 +142,7 @@ synthetic clusters and annotation strips.
 pak::pak("aolow/otherworldspalettes")
 ```
 
-## Use
+## Basic usage
 
 ```r
 library(ggplot2)
@@ -159,7 +165,7 @@ on colour alone when many groups are present: add direct labels, shapes, line
 types, or facets. The 8-colour `nebula` palette is the preferred default for
 figures that must remain easy to distinguish in print.
 
-## Continuous palettes
+## Sequential and diverging palettes
 
 ![Six sequential Other Worlds palettes](man/figures/continuous-palettes.png)
 
