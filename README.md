@@ -9,7 +9,7 @@ move smoothly through deep-space shadows into luminous atmospheric colour.
 
 *Other Worlds* grew out of my original paintings and drawings of imagined
 landscapes, strange skies, and cosmic light. Those images also inspired
-[*Other Worlds*, my coloring and creative activity book](https://www.olaolowart.com/other-worlds),
+[*Other Worlds*, my coloring and creative activity book](https://www.olaolowart.com/),
 which invites readers to explore color, texture, light, and atmosphere in
 their own way.
 
