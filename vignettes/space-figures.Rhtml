@@ -1,0 +1,90 @@
+<!--
+%\VignetteIndexEntry{Space figures with Other Worlds palettes}
+%\VignetteEngine{knitr::knitr}
+%\VignetteEncoding{UTF-8}
+-->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Space figures | Other Worlds</title>
+<style>body{font:16px/1.55 system-ui,sans-serif;max-width:970px;margin:2rem auto;padding:1rem;color:#203048}img{max-width:100%;height:auto}code{background:#edf2f6;padding:2px 4px}</style>
+</head><body><h1>Space figures: art-inspired scientific graphics</h1>
+<p>All datasets here are <strong>synthetic and illustrative</strong>, not real stellar catalogs, exoplanet observations or derived UMAP embeddings. These figures teach categorical versus numerical color encoding. Each simulation uses a fixed seed.</p>
+<!--begin.rcode setup, echo=FALSE
+knitr::opts_chunk$set(fig.width=9,fig.height=4.8,dpi=125)
+library(otherworldspalettes)
+navy <- "#081126"; pale <- "#E9F3F7"
+darkpar <- function() par(bg=navy,fg=pale,col.axis="#CFDDE7",col.lab=pale,col.main=pale)
+end.rcode-->
+<h2>1. Hertzsprung-Russell-style diagram</h2>
+<p>Simulated main-sequence, giant and white-dwarf populations. Temperature decreases left-to-right. Colors represent stellar <em>categories</em>, not a calibrated temperature scale.</p>
+<!--begin.rcode hr, echo=TRUE, fig.height=5
+set.seed(209)
+t <- c(10^rnorm(560,log10(5900),.14),
+       10^rnorm(95,log10(4500),.055),
+       10^rnorm(65,log10(12000),.09))
+t <- pmax(2800,pmin(32000,t))
+lum <- c((t[1:560]/5900)^6*10^rnorm(560,0,.3),
+         10^rnorm(95,2.15,.37),10^rnorm(65,-2.2,.4))
+grp <- factor(rep(c("Main sequence","Giants","White dwarfs"),c(560,95,65)),
+              levels=c("Main sequence","Giants","White dwarfs"))
+pal <- setNames(otherworlds_palette(3,"eclipse"),levels(grp))
+op <- darkpar()
+plot(t,lum,log="xy",xlim=c(33000,2700),ylim=c(.0001,6000),
+     col=unname(pal[as.character(grp)]),pch=16,cex=.7,
+     xlab="Effective temperature (K), hot to cool",
+     ylab="Relative luminosity (illustrative)",main="Synthetic HR-style populations")
+legend("topright",legend=names(pal),col=unname(pal),pch=16,text.col=pale,bty="n")
+par(op)
+end.rcode-->
+<h2>2. Synthetic all-sky density</h2>
+<p>An equirectangular longitude-latitude toy density field shows a Galactic band and central bulge, not a real survey map. A sequential palette encodes density.</p>
+<!--begin.rcode sky, echo=TRUE
+lon<-seq(-180,180,length.out=361);lat<-seq(-90,90,length.out=181)
+d<-outer(lon,lat,function(l,b)
+  .07+.76*exp(-.5*(b/13)^2)*(.72+.28*cos(l*pi/180)^2)+
+  .70*exp(-.5*(l/42)^2-.5*(b/22)^2)+
+  .08*cos((l+3*b)*pi/35)^2*exp(-.5*(b/48)^2))
+op<-darkpar()
+image(lon,lat,d,col=otherworlds_continuous_palette(220,"supernova"),
+      xlab="Illustrative longitude (degrees)",ylab="Illustrative latitude (degrees)",
+      main="Toy all-sky density",useRaster=TRUE)
+box(col="#CFDDE7");par(op)
+end.rcode-->
+<h2>3. Exoplanet-style categorical scatterplot</h2>
+<p>Logarithmic period and radius axes, with simulated method-dependent selection effects. These points are <strong>not observed planet demographics</strong>.</p>
+<!--begin.rcode planets, echo=TRUE
+set.seed(107)
+method<-factor(rep(c("Transit","Radial velocity","Microlensing","Direct imaging"),
+                   c(165,90,55,30)))
+period<-c(10^runif(165,-1.3,3.2),10^runif(90,0,4.4),
+          10^runif(55,2,5.1),10^runif(30,3.2,5.7))
+radius<-pmax(.25,pmin(30,c(10^rnorm(165,.25,.42),10^rnorm(90,.75,.32),
+                          10^rnorm(55,.68,.31),10^rnorm(30,1,.25))))
+pal<-setNames(otherworlds_palette(4,"eclipse"),levels(method))
+op<-darkpar()
+plot(period,radius,log="xy",pch=16,cex=.65,col=unname(pal[as.character(method)]),
+     xlab="Simulated orbital period (days)",ylab="Simulated radius (Earth radii)",
+     main="Toy exoplanet detections")
+legend("topleft",legend=names(pal),col=unname(pal),pch=16,text.col=pale,bty="n",cex=.85)
+par(op)
+end.rcode-->
+<h2>4. Galaxy 40: continuity vs overall distinction</h2>
+<p>Two palettes on the <strong>same simulated cluster embedding</strong>, not a computed UMAP. Galaxy 40 preserves Cosmic 20 assignments; Galaxy 40 Max does not. Neither is tuned for dark backgrounds, so compare them on white.</p>
+<!--begin.rcode clusters, echo=TRUE, fig.width=10, fig.height=5
+set.seed(40);k<-40L
+theta<-seq_len(k)*pi*(3-sqrt(5));rad<-sqrt(seq_len(k))*.9
+centers<-cbind(rad*cos(theta),rad*sin(theta))
+g<-factor(rep(seq_len(k),each=30),levels=seq_len(k))
+x<-rep(centers[,1],each=30)+rnorm(length(g),sd=.30)
+y<-rep(centers[,2],each=30)+rnorm(length(g),sd=.30)
+op<-par(mfrow=c(1,2),bg="white",fg="#25314F",
+        col.axis="#25314F",col.lab="#25314F",col.main="#25314F",
+        mar=c(3.5,3,3,1))
+for(nm in c("galaxy40","galaxy40_max")){
+  cols<-otherworlds_palette(k,nm)
+  plot(x,y,pch=16,cex=.5,col=unname(cols)[as.integer(g)],
+       main=nm,xlab="Embedding 1",ylab="Embedding 2")
+  text(centers[,1],centers[,2],seq_len(k),cex=.5,col="#182437")
+}
+par(op)
+end.rcode-->
+<p><strong>Use labels and stable factor levels.</strong> Categorical colors are not quantitative maps. Validate final charts in grayscale, simulated color-vision differences and real presentation conditions.</p>
+</body></html>

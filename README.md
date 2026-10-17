@@ -1,189 +1,122 @@
 # otherworldspalettes
 
-`otherworldspalettes` provides qualitative and continuous colour palettes
-derived from the *Other Worlds* art project. Discrete colours are deliberately
-ordered so neighbouring series jump across hue and lightness; continuous maps
-move smoothly through deep-space shadows into luminous atmospheric colour.
+**Art-inspired color palettes for R and ggplot2.** From the *Other Worlds* artwork: vivid qualitative colors, atmospheric sequential gradients, and diverging heatmap scales for scientific graphics.
 
-## From the artwork to the palettes
+![Nebula, Stellar, and Cosmic categorical palettes](man/figures/all-palettes.png)
 
-*Other Worlds* grew out of my original paintings and drawings of imagined
-landscapes, strange skies, and cosmic light. Those images also inspired
-[*Other Worlds*, my coloring and creative activity book](https://www.olaolowart.com/other-worlds),
-which invites readers to explore color, texture, light, and atmosphere in
-their own way.
+**[Explore all palettes and figures](docs/vignette-gallery.md)** · [Palette reference and guidance](docs/palette-guide.md) · [Interactive swatch explorer](inst/explorer/index.html)
 
-I work in both art and science, and this R package brings those two interests
-together. The palettes translate the mood and color relationships of the
-artwork into a practical vocabulary for scientific graphics. They are
-artist-directed adaptations for visualization, not exact reproductions of
-individual book pages or a claim of universal perceptual uniformity.
+## Install
 
-## Palettes
-
-![All three Other Worlds palettes](man/figures/all-palettes.png)
-
-The package contains three **nested sizes of one palette system**, rather than
-three unrelated colour schemes:
-
-- `nebula` contains 8 colours and is the recommended default for most figures.
-- `stellar` contains the same 8 colours plus 4 additional colours, for 12 total.
-- `cosmic` contains all `stellar` colours plus 8 additional colours, for 20 total.
-
-Because the palettes are nested, you can expand from `nebula` to `stellar`
-or `cosmic` without changing the existing palette entries. Within each
-palette, the order jumps across hue and lightness to keep neighbouring groups
-visually distinct.
-
-For consistent group-to-color assignments across figures, also keep the
-category or factor level order fixed in your plotting code. The package's
-accessors and ggplot2 scales default to `cosmic`; explicitly select
-`palette = "nebula"` for the recommended eight-color starting point.
-
-## Installation
+Install from GitHub with [pak](https://pak.r-lib.org/):
 
 ```r
-# install.packages("pak")
+install.packages("pak") # once, if needed
 pak::pak("aolow/otherworldspalettes")
 ```
 
-## Use
+## Get started
 
 ```r
-library(ggplot2)
 library(otherworldspalettes)
+library(ggplot2)
 
+# Browse the available named palettes.
 otherworlds_palettes()
-
-nebula <- otherworlds_palette(8, "nebula")
-stellar <- otherworlds_palette(12, "stellar")
-cosmic <- otherworlds_palette(20, "cosmic")
-
-# Optional ggplot2 scales
-ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = Species)) +
-  geom_point(size = 2) +
-  scale_colour_otherworlds("Species", palette = "nebula")
-```
-
-The palettes are intended for qualitative data. For accessibility, do not rely
-on colour alone when many groups are present: add direct labels, shapes, line
-types, or facets. The 8-colour `nebula` palette is the preferred default for
-figures that must remain easy to distinguish in print.
-
-## Continuous palettes
-
-![Six sequential Other Worlds palettes](man/figures/continuous-palettes.png)
-
-The package includes six sequential, dark-to-light palettes. The first
-four explore a focused hue family; the final two move across hues in the spirit
-of perceptually smooth scientific colour maps.
-
-- `emerald_void` — mineral greens and luminous emerald.
-- `blue_hour` — midnight indigo through atmospheric cyan.
-- `red_giant` — oxblood, nebula red, and warm stellar light.
-- `magenta_orbit` — deep violet through ion pink.
-- `tidal_emerald` — blue-black through tidal blue and emerald to alien light.
-- `supernova` — shock blue through dusty violet, nebula coral, and ejecta gold
-  to an icy ionized core.
-
-Three additional palettes are designed for heatmaps and centered data. Each
-passes through a bright middle colour drawn from the paintings rather than a
-generic white midpoint.
-
-![Three painting-derived heatmap palettes](man/figures/three-colour-heatmaps.png)
-
-- `solar_tide` — deep blue through sun yellow to nebula red.
-- `alien_bloom` — emerald through warm cream to orbit magenta.
-- `cosmic_shore` — royal purple through atmospheric cyan to vermilion.
-
-For dense heatmaps, three higher-contrast options use darker poles, luminous
-centers, and more saturated transitions:
-
-- `signal_fire` — deep space and electric blue through solar yellow to flare
-  orange and dark red.
-- `ultraviolet` — violet-black and electric violet through ion cyan to hot
-  magenta and deep wine.
-- `alien_heat` — forest void and emerald through acid yellow to orbit magenta
-  and deep plum.
-
-![High-contrast heatmap palettes](man/figures/high-contrast-heatmaps.png)
-
-### Neutral-centered maps for scientific comparisons
-
-Three additional diverging palettes have a light, neutral central anchor:
-
-- `ion_balance` pairs ocean blue with iron red.
-- `stellar_balance` pairs violet shadows with warm umber.
-- `ember_balance` pairs deep teal with muted raspberry.
-
-These provide a calmer alternative to the painting-led gradients for signed
-effects, standardized expression differences, and fold-change heatmaps.
-They are design candidates, **not yet certified perceptually uniform or
-color-vision-deficiency-safe**. Compare against a validated colormap for
-high-stakes numeric interpretation.
-
-For centered, signed data (such as changes relative to a baseline), set
-symmetric color limits around zero if zero should align with the middle
-color. These artist-inspired gradients have not been established as
-perceptually uniform or color-vision-deficiency-safe; for quantitative
-interpretation, check the rendered figure and consider labels or a
-validated scientific colormap as a comparison.
-
-See `vignette("heatmaps", package = "otherworldspalettes")` for side-by-side
-examples and guidance on choosing a palette.
-
-```r
 otherworlds_continuous_palettes()
-cols <- otherworlds_continuous_palette(100, "tidal_emerald")
 
+# Categorical colors for up to 8 groups.
+otherworlds_palette(8, "nebula")
+
+# Plot with an explicit palette selection.
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point(size = 2.5) +
+  scale_colour_otherworlds(palette = "nebula")
+
+# Continuous values.
 ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_raster() +
-  scale_fill_otherworlds_c(palette = "supernova")
-
-# Three-colour heatmap
-heatmap(volcano, col = otherworlds_continuous_palette(101, "solar_tide"))
+  scale_fill_otherworlds_c(palette = "tidal_emerald")
 ```
 
-## Choosing a palette
+## Choose a palette
 
-| Data | First choice | Notes |
+| What you're showing | Start with | Other choices |
 | --- | --- | --- |
-| Categorical, up to 8 groups | `nebula` | Also use shapes or labels |
-| Categorical, 9 to 12 | `stellar` | Check small marks carefully |
-| Categorical, 13 to 20 | `cosmic` | Prefer faceting when feasible |
-| Ordered magnitude | `tidal_emerald`, `blue_hour` | Check lightness ordering |
-| Signed, centered values | `ion_balance`, `stellar_balance`, `ember_balance` | Fix symmetric scale limits |
-| Expressive/artistic heatmaps | `alien_heat`, `ultraviolet`, `solar_tide` | Highly saturated centers can exaggerate zero |
+| Categories on light backgrounds, up to 8/12/20 | `nebula` | `stellar`, `cosmic` |
+| Many categories, up to 40 | `galaxy40` | `galaxy40_max` |
+| Categories on dark backgrounds, up to 8/12/20 | `eclipse` | `afterglow`, `deepfield` |
+| Ordered measurements or intensity | `tidal_emerald` | `blue_hour`, `supernova` |
+| Signed values centered at zero | `ion_balance` | `stellar_balance`, `ember_balance` |
+| Expressive or illustrative heatmaps | `solar_tide` | `alien_bloom`, `cosmic_shore`, `signal_fire`, `ultraviolet`, `alien_heat` |
 
-For a local interactive swatch explorer, open
-[`inst/explorer/index.html`](inst/explorer/index.html) in a browser.
-To see realistic scientific plots, see
-`vignette("scientific-figures", package = "otherworldspalettes")`.
-To run checks, use `R CMD check .` or the GitHub Actions workflow.
+The light-background family (`nebula` → `stellar` → `cosmic`) and the dark-background family (`eclipse` → `afterglow` → `deepfield`) each have nested 8-, 12-, and 20-color versions. Keep factor levels fixed across figures to preserve category assignments.
 
-### Signed heatmap example
+### Extended categorical palettes: Galaxy 40
+
+![Galaxy 40 and Galaxy 40 Max comparison](man/figures/galaxy40-comparison.svg)
+
+Both support **up to 40 categories**, such as cell clusters or sample groups:
+
+- **`galaxy40`** retains the first 20 `cosmic` colors and names, so existing mappings can be preserved.
+- **`galaxy40_max`** optimizes all 40 colors together, without preserving earlier mappings.
 
 ```r
-library(ggplot2)
-z <- as.matrix(scale(USArrests))
-m <- as.data.frame(as.table(z))
-names(m) <- c("state", "feature", "zscore")
-ggplot(m, aes(feature, state, fill = zscore)) +
-  geom_tile() +
-  scale_fill_otherworlds_c(
-    palette = "ion_balance",
-    limits = c(-max(abs(m$zscore)), max(abs(m$zscore)))
+# Use either name with the same API as the original palettes.
+otherworlds_palette(40, "galaxy40")
+otherworlds_palette(40, "galaxy40_max")
+scale_colour_otherworlds(palette = "galaxy40")
+```
+
+Forty colors cannot guarantee easy recognition of every group. Direct labels, faceting, or other visual cues are especially important.
+
+### Dark-background palettes: Eclipse, Afterglow, Deepfield
+
+![Nested dark-background palette family](man/figures/dark-palettes.svg)
+
+These offer **8, 12, or 20 luminous categorical colors** for navy, charcoal, and black presentations. They are a separate family, not recolorings of the original palettes.
+
+```r
+# Eight categories against a dark slide background.
+ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point(size = 2.5) +
+  scale_colour_otherworlds(palette = "eclipse") +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.background = element_rect(fill = "#081126", color = NA),
+    panel.background = element_rect(fill = "#081126", color = NA),
+    panel.grid = element_blank(),
+    text = element_text(color = "#E8F0F5"),
+    axis.text = element_text(color = "#C8D7E1"),
+    legend.background = element_rect(fill = "#081126", color = NA),
+    legend.key = element_rect(fill = "#081126", color = NA)
   )
 ```
 
-The negative and positive ends should be equally far from zero. If you use
-asymmetric limits, the visual midpoint no longer represents zero.
+### Continuous and heatmap colors
 
-## Interpretation and accessibility
+![Sequential palettes](man/figures/continuous-palettes.png)
 
-These are art-derived colors intended for figures, not calibrated measurements.
-Color contrast depends on mark size, background, display, and print process.
-Test grayscale and common color-vision deficiencies, label critical findings,
-and never encode a consequential distinction by color alone. Adjacent
-categorical colors are ordered for visual distinction, but no formal
-accessibility guarantee is asserted.
+Use a **sequential** palette for magnitude and a **neutral-centered diverging** palette such as `ion_balance` for signed data with a meaningful zero. Other painting-derived gradients offer more expressive alternatives.
+
+For all families, scientific plot examples on white and dark backgrounds, and side-by-side comparisons, see the **[visual gallery](docs/vignette-gallery.md)** and [detailed palette guide](docs/palette-guide.md).
+
+## Examples and documentation
+
+- [Visual gallery](docs/vignette-gallery.md): GitHub-rendered previews of light figures, heatmaps, Galaxy 40, astronomy examples, and dark slides.
+- [Palette guide](docs/palette-guide.md): every family, usage details, selection advice, reproducible examples, and accessibility notes.
+- [Scientific figures](vignettes/scientific-figures.Rhtml), [heatmaps](vignettes/heatmaps.Rhtml), [space figures](vignettes/space-figures.Rhtml), [Galaxy 40](vignettes/galaxy40.Rhtml), and [dark slides](vignettes/dark-slides.Rhtml): executable Rhtml vignette source files.
+
+## The art behind the colors
+
+The palettes grew out of my *Other Worlds* paintings and drawings, an exploration of imagined landscapes, otherworldly light, and cosmic atmospheres. That artwork also inspired [*Other Worlds*, my coloring and creative activity book](https://www.olaolowart.com/other-worlds).
+
+My work spans both art and science. This R package translates the artwork's color relationships into a practical set of choices for scientific figures. These are artist-directed adaptations, not literal color extractions from individual book pages.
+
+[Explore the book and my other artwork](https://www.olaolowart.com/) · [View the palette gallery](docs/vignette-gallery.md)
+
+## Responsible use
+
+These palettes are design tools, **not certified perceptually uniform or color-vision-accessible colormaps**. Use labels, shapes, and facets when categories are hard to distinguish. For signed heatmaps, set limits symmetrically around zero when zero should map to the midpoint. Test contrast and readability on the intended background, especially for small points, thin lines, and projected slides.
+
+MIT licensed. See [LICENSE](LICENSE) and [NEWS](NEWS).

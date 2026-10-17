@@ -3,7 +3,8 @@
 #' Apply an art-inspired qualitative palette to a discrete 'ggplot2' scale.
 #'
 #' @param ... Arguments passed to [ggplot2::discrete_scale()].
-#' @param palette One of `"nebula"`, `"stellar"`, or `"cosmic"`.
+#' @param palette A palette name returned by [otherworlds_palettes()],
+#'   including the dark-surface families `eclipse`, `afterglow`, and `deepfield`.
 #' @param direction Use `1` for the original order or `-1` to reverse it.
 #' @param aesthetics Character vector of aesthetics to scale.
 #'

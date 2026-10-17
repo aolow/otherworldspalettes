@@ -1,0 +1,44 @@
+<!--
+%\VignetteIndexEntry{Dark slides with Other Worlds palettes}
+%\VignetteEngine{knitr::knitr}
+%\VignetteEncoding{UTF-8}
+-->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Dark slides | Other Worlds</title>
+<style>body{font:16px/1.55 system-ui,sans-serif;max-width:920px;margin:2rem auto;padding:1rem;color:#203048}img{max-width:100%;height:auto}code{background:#edf2f6;padding:2px 4px}</style>
+</head><body><h1>Dark-background slide figures</h1><p>Use nested <code>eclipse</code>, <code>afterglow</code> and <code>deepfield</code> for categorical marks on navy, charcoal, and black. These are illustrative data, not measurements. Style labels and lines independently.</p>
+<!--begin.rcode setup, echo=FALSE
+knitr::opts_chunk$set(fig.width=8.5,fig.height=4,dpi=125)
+library(otherworldspalettes)
+navy<-"#081126";pale<-"#E8F0F5"
+end.rcode-->
+<h2>Three clusters on charcoal</h2>
+<!--begin.rcode scatter, echo=TRUE
+set.seed(77)
+x<-c(rnorm(60,-1.6,.5),rnorm(60,0,.5),rnorm(60,1.6,.5))
+y<-c(rnorm(60,1,.6),rnorm(60,-.7,.6),rnorm(60,1.4,.6))
+grp<-factor(rep(c("Signal A","Signal B","Signal C"),each=60))
+cols<-setNames(otherworlds_palette(3,"eclipse"),levels(grp))
+op<-par(bg="#101827",fg=pale,col.axis="#CDD9E2",col.lab=pale,col.main=pale)
+plot(x,y,pch=16,cex=1.05,col=unname(cols[as.character(grp)]),
+     xlab="Response axis 1",ylab="Response axis 2",
+     main="Illustrative category comparison")
+legend("bottomright",legend=names(cols),col=unname(cols),pch=16,
+       text.col=pale,bty="n")
+par(op)
+end.rcode-->
+<h2>Line series on navy</h2>
+<p>Line type and direct labels provide backup identification when colors are hard to separate.</p>
+<!--begin.rcode lines, echo=TRUE
+day<-0:12
+series<-rbind(8+day*.8+sin(day*.7),9+day*.3+cos(day*.55),
+              10-day*.2+sin(day*.4))
+cols<-otherworlds_palette(3,"eclipse")
+op<-par(bg=navy,fg=pale,col.axis="#CDD9E2",col.lab=pale,col.main=pale)
+matplot(day,t(series),type="l",lty=1:3,lwd=3,col=cols,
+        xlab="Illustrative time",ylab="Illustrative signal",main="Lines need more than color")
+legend("topleft",legend=paste("Series",1:3),col=cols,lty=1:3,
+       lwd=3,text.col=pale,bty="n")
+par(op)
+end.rcode-->
+<p>Test marks and labels on the actual slide background, and do not apply discrete palettes to numeric magnitude or signed effects. Relative-luminance contrast screening for filled marks does not certify text readability, 20-category discrimination, or accessibility for all users.</p>
+</body></html>

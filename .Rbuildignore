@@ -1,3 +1,5 @@
 ^cran-comments\.md$
 ^README\.md$
 ^\.github$
+^design$
+^docs$
